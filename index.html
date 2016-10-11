@@ -6,7 +6,37 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<header>
+  <p>Santa image (link to result.html page) <a href="result.html">Check on your gift from <img src="img/santa.jpg"></a></p>
+</header>
 
+<section>
+  <form action="submitWishForm">
+    <fieldset>
+        <legend>A wish for xmas</legend>
+        <p>Wish <input type="text" name="myWish"></p>
+        <p>Category dropdown <input type="text"></p>
+        <p>How badly you want it</p>
+        <p>
+            <input type="radio" value="1" name="wishGrade">
+            <input type="radio" value="2" name="wishGrade">
+            <input type="radio" value="3" checked name="wishGrade">
+            <input type="radio" value="4" name="wishGrade">
+            <input type="radio" value="5" name="wishGrade">
+        </p>
+        <p><button type="button" onclick="uploadFile()">Upload image</button></p>
+        <p><button type="submit" onclick="submitWish()">Submit</button></p>
+    </fieldset>
+  </form>
+</section>
+
+<footer>
+  <ul>
+    <li class="twitter">Twitter: @NodeGirlsSydney</li>
+    <li class="facebook">Facebook: NodeGirlsAustralia</li>
+    <li class="email">e-mail: info@nodegirls.sydney</li>
+  </ul>
+</footer>
 
 <script src="js/level1.js"></script>
 </body>
