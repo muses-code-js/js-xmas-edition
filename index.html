@@ -15,16 +15,28 @@
     <fieldset>
         <legend>A wish for xmas</legend>
         <p>Wish <input type="text" name="myWish"></p>
-        <p>Category dropdown <input type="text"></p>
+        <p>Category
+          <select name="category">
+            <option value="travel">Travel</option>
+            <option value="things">Things</option>
+            <option value="health">Health</option>
+            <option value="non-material">Non material</option>
+            <option value="experience">Experience</option>
+          </select>
+        </p>
+        <p>Describe your wish in details </br>
+          <textarea name="description" rows="5" cols="30">
+          </textarea>
+        </p>
         <p>How badly you want it</p>
         <p>
             <input type="radio" value="1" name="wishGrade">
             <input type="radio" value="2" name="wishGrade">
-            <input type="radio" value="3" checked name="wishGrade">
+            <input type="radio" value="3" name="wishGrade" checked >
             <input type="radio" value="4" name="wishGrade">
             <input type="radio" value="5" name="wishGrade">
         </p>
-        <p><button type="button" onclick="uploadFile()">Upload image</button></p>
+        <p>Upload image <input type="file" onchange="uploadFile()"></p>
         <p><button type="submit" onclick="submitWish()">Submit</button></p>
     </fieldset>
   </form>
