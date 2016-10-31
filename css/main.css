@@ -2,10 +2,39 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-form {
-    width: 700px;
-    margin: 0 auto;
-    text-align: center;
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header a {
+    position: relative;
+    top: 15px;
+    left: 70%;
+}
+
+header, footer{
+    min-height: 80px;
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    background-color: red;
+    color: white;
+}
+
+section{
+    box-sizing: border-box;
+    flex: 2 auto;
+    min-width: 450px;
+}
+
+footer > ul {
+    list-style: none;
 }

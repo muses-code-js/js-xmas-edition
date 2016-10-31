@@ -4,49 +4,52 @@
   <meta charset="UTF-8">
   <title>Letter to Santa</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 <header>
-  <p>Santa image (link to result.html page) <a href="result.html">Check on your gift from <img src="img/santa.jpg"></a></p>
+  <p><a href="result.html">Check on your gift <img src="img/present-box.png"></a></p>
 </header>
 
 <section>
   <form action="submitWishForm">
-    <fieldset>
-        <legend>A wish for xmas</legend>
-        <p>Wish <input type="text" name="myWish"></p>
-        <p>Category
-          <select name="category">
-            <option value="travel">Travel</option>
-            <option value="things">Things</option>
-            <option value="health">Health</option>
-            <option value="non-material">Non material</option>
-            <option value="experience">Experience</option>
-          </select>
-        </p>
-        <p>Describe your wish in details </br>
-          <textarea name="description" rows="5" cols="30">
-          </textarea>
-        </p>
-        <p>How badly you want it</p>
-        <p>
-            <input type="radio" value="1" name="wishGrade">
-            <input type="radio" value="2" name="wishGrade">
-            <input type="radio" value="3" name="wishGrade" checked >
-            <input type="radio" value="4" name="wishGrade">
-            <input type="radio" value="5" name="wishGrade">
-        </p>
-        <p>Upload image <input type="file" onchange="uploadFile()"></p>
-        <p><button type="submit" onclick="submitWish()">Submit</button></p>
-    </fieldset>
+    <p>Dear Santa,</p>
+    <p>My name is <input type="text" name="myName"> and I live in</p>
+    <p>
+      <select name="city">
+        <option value="adelaide">Adelaide</option>
+        <option value="brisbane">Brisbane</option>
+        <option value="cairns">Cairns</option>
+        <option value="darwin">Darwin</option>
+        <option value="melbourne">Melbourne</option>
+        <option value="perth">Perth</option>
+        <option value="sydney">Sydney</option>
+      </select>. I think this year I have been </p>
+     <p>
+       <input type="radio" value="veryGood" name="goodVSnaughty"> Very Good
+       <input type="radio" value="good" name="goodVSnaughty"> Good
+       <input type="radio" value="naughty" name="goodVSnaughty" checked> A little  Naughty.
+    </p>
+    <p>I would really like to receive
+      <textarea name="description" rows="2" cols="45"></textarea>
+      this Christmas.
+    </p>
+    <p>Upload image <input type="file" onchange="uploadFile()"></p>
+    <p>
+      <button type="submit" onclick="submitWish()">Send your letter to Santa</button>
+    </p>
   </form>
 </section>
 
 <footer>
   <ul>
-    <li class="twitter">Twitter: @NodeGirlsSydney</li>
-    <li class="facebook">Facebook: NodeGirlsAustralia</li>
-    <li class="email">e-mail: info@nodegirls.sydney</li>
+    <li>Twitter:
+      <a href="https://twitter.com/NodeGirlsSydney">@NodeGirlsSydney</a>
+      <a href="https://twitter.com/NodeGirlsMelb">@NodeGirlsMelb</a>
+    </li>
+    <li>Facebook: <a href="https://www.facebook.com/NodeGirlsAustralia">NodeGirlsAustralia</a></li>
+    <li>Website: <a href="http://nodegirls.com.au">http://nodegirls.com.au</a></li>
+    <li>e-mail: <a href="mailto:info@nodegirls.com.au">info@nodegirls.com.au</a></li>
   </ul>
 </footer>
 

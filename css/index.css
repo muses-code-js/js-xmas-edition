@@ -1,0 +1,30 @@
+section{
+    background: url(../img/letter-frame.png) no-repeat center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-color: #DBDFBB;
+    min-height: 700px;
+}
+
+a img {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: -1%;
+    left: 120%;
+}
+
+a img:hover {
+    height: 170px;
+    width: 170px;
+}
+
+form {
+    width: 350px;
+    height: 400px;
+    margin: 100px auto;
+    text-align: center;
+    padding-left: 17px;
+}
