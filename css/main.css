@@ -11,14 +11,16 @@ a {
     color: inherit;
 }
 
-a:hover {
-    text-decoration: underline;
+header p:first-of-type {
+    position: relative;
+    top: 15px;
+    right: 70%;
 }
 
 header a {
     position: relative;
-    top: 15px;
-    left: 70%;
+    top: 10px;
+    left: 75%;
 }
 
 header, footer{
@@ -33,6 +35,10 @@ section{
     box-sizing: border-box;
     flex: 2 auto;
     min-width: 450px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 footer > ul {
