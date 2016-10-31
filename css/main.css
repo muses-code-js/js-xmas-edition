@@ -23,7 +23,7 @@ header a {
     left: 75%;
 }
 
-header, footer{
+header, footer {
     min-height: 80px;
     box-sizing: border-box;
     flex: 0 1 auto;
@@ -31,10 +31,12 @@ header, footer{
     color: white;
 }
 
-section{
+section {
     box-sizing: border-box;
     flex: 2 auto;
     min-width: 450px;
+    background-color: #DBDFBB;
+    min-height: 600px;
 }
 
 footer a:hover {
