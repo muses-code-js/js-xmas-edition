@@ -1,4 +1,5 @@
 /*  How does a web form work?
+    =========================
 
     1. A visitor visits a web page that contains a form.
     2. The web browser displays the HTML form.
@@ -12,10 +13,26 @@
 
     The parts of a web form
     A standard web form has the following parts:
-    1. The HTML code for the form (read in more details at html-form-description.txt file)
+    1. The HTML code for the form (read in more details at
+       html-form-description.txt file)
     2. Input validations.
     3. Form processor script.
 */
+
+/*
+    Input Validations.
+    =================
+
+    Input validations are essential for any web form since it helps the web site
+    visitor submit the right input. Input validations are often written in the
+    client-side scripting language – JavaScript. (JavaScript runs inside the
+    visitor’s web browser and gives quick feedback).
+
+    It is required to do the validations on the server side as well. This is
+    because JavaScript is an optional component that can be disabled and avoided.
+    The server-side script should make sure that the data it processes is a
+    valid form submission.
+ */
 
 
 function submitWish(){
@@ -24,3 +41,12 @@ function submitWish(){
 
 function uploadFile(){
 }
+
+
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+// Congratulations! You have finished Part 1!                         //
+// Stand up, stretch your legs, celebrate your achievement.           //
+// Next step will be following up the instructions in level2.js file. //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
