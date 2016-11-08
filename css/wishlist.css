@@ -17,3 +17,13 @@ a img:hover {
 	height: 170px;
 	width: 170px;
 }
+
+header p:first-of-type img {
+	height: 190px;
+	width: 130px;
+}
+
+header p:first-of-type img:hover {
+	height: 210px;
+	width: 150px;
+}

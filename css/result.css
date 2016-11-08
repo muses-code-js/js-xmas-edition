@@ -19,3 +19,16 @@
 .santa img{
     max-width: 400px;
 }
+
+header p:first-of-type img {
+    height: 190px;
+    width: 130px;
+    position: absolute;
+    top: -1%;
+    left: 120%;
+}
+
+header p:first-of-type img:hover {
+    height: 210px;
+    width: 150px;
+}
