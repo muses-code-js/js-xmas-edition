@@ -39,10 +39,35 @@ section {
     min-height: 600px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer{
+    font-family: Georgia, serif;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0 30px;
 }
 
 footer > ul {
     list-style: none;
+    -webkit-padding-start: 0;
+}
+
+footer li {
+    padding: 5px;
+}
+
+footer a {
+    color: #DBDFBB;
+    font-style: italic;
+}
+
+footer a:hover {
+    color: #000000;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
 }
