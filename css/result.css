@@ -1,6 +1,21 @@
 .gift-section {
     width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.santa-gift {
+    width: inherit;
     height: 400px;
-    margin: 0 auto;
-    border: 1px solid black;
+}
+
+.santa {
+    position: absolute;
+    right: 3%;
+    top: 45%;
+}
+
+.santa img{
+    max-width: 400px;
 }
