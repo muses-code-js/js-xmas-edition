@@ -1,10 +1,21 @@
 # js-xmas-edition
 
-JavaScript workshop (forms, inputs, regex, ajax, localstorage etc) 
+JavaScript workshop (forms, inputs, regex, ajax, localstorage etc)
+
+## Slides
+
+Check on slides, click [here]()
+
+
+## Feedback
+
+To leave feedback click [here]()
+
+
+___________________
 
 
 ##How to use
-_______________
 
 
 
@@ -23,9 +34,10 @@ an option 'open in browser' - preferably use Chrome, but Firefox and Safari will
 Follow the instructions in _level1.js_ file and type code in your Text Editor(it is where your code lives and you can write, edit and delete code), in order to see anything that you console.log() you need refresh web page and result will be in web console on the page(you can directly write javaScript code here as well and see result straight away, but as soon as you refresh the page all code will be gone, that is why we use Text Editor).
 
 
+________________________
 
 ##Structure
-____________________
+
 
 
 - Css folder contains css files that are responsible for styles and how our project looks on the web.
@@ -34,7 +46,7 @@ ____________________
 
 - Js folder contains javaScript files that makes our project works, it defines content and make static page functional.
     It contains 3 files:
-    - _level1.js_ - form and different types of input.
+    - _level1.js_ - create web form and different types of input.
 
 
 - _index.html_ - a file responsible for structure of our project.

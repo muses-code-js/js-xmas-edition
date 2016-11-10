@@ -1,0 +1,269 @@
+How does a web form work?
+
+1. A visitor visits a web page that contains a form.
+2. The web browser displays the HTML form.
+3. The visitor fills in the form and submits
+4. The browser sends the submitted form data to the web server
+5. A form processor script running on the web server processes the form data.
+   The processing steps can include:
+     - sending the form submission by email
+     - saving the submission to a database table or a file.
+6. A response page is sent back to the browser.
+
+
+The parts of a web form
+A standard web form has the following parts:
+
+1. The HTML code for the form
+2. Input validations.
+3. Form processor script.
+
+________________________________________
+
+1. The HTML <form> tag
+
+   All the input elements should be enclosed within the opening and closing <form> tags like this:
+
+   <form>
+    The input elements go here….
+   </form>
+
+   The following are the attributes of the form tag:
+
+   action=”Link to the form processor script”
+   The action attribute points to the server side script (the ‘back end’) that handles the form submission. Usually,
+   this will be a script.
+
+   method =get|post ( either GET or POST)
+   In simple terms, if you use GET method, the form submission values are passed as part of the URL. If it is POST, the
+   information is sent to the server as part of the data body and will not be visible in the URL box in the user’s browser.
+   If you don’t specify the method, GET is taken by default.
+
+   Suppose your form handler page is a Javascript script named level1.js. the HTML form code would be:
+
+   <form action="cgi-bin/level1.js" method="post">
+   ................................
+   .....your input items here .....
+   ................................
+   </form>
+   Read more about the HTML Form tag here:
+    - http://html5doctor.com/html5-forms-introduction-and-new-attributes/
+    - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+   And about the GET and Post methods here:
+    - https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Sending_and_retrieving_form_data
+
+   The form input elements
+
+   You can have different types of input elements in a form. Examples are: check boxes, radio buttons, simple text boxes etc.
+
+   Let us see how to create input elements for a form.
+
+   Single line text box
+
+   A single line text box can be used to collect the name, email, phone number etc from your web site visitors.
+
+   Here is the code to create a simple text box:
+
+   <input type="text" name="FirstName" />
+   type=”text” - the ‘type’ attribute tells the browser that a single line text input box should be created.
+
+   name=”FirstName” - gives a name to the field. The name is used to identify the field on the server side.
+
+   There are some more attributes that you can use with the text box
+
+   value=”default value” - The text you give as value will be displayed by default in the text box.
+   Example:
+   <input TYPE="text" name="FirstName" value="Your FirstName here,Please" />
+
+   maxlength=”maxChars” - Specifies the maximum number of characters the user can enter into this text box.
+
+   Submit button
+
+   After entering the data, the user presses the submit button which triggers the browser to send the data to the server.
+   You can add a submit button to the form using the ‘submit’ input type.
+
+   <input type="submit" name="submit" value="Submit" />
+
+   name =”submit”
+   There can be more than one submit buttons in a form. On the server side, the submit button which was pressed can be
+   identified using the ‘name’ attribute.
+
+   value=”Submit” - The string given in the ‘value’ attribute is displayed as the label of the Submit button.
+
+   Check box
+
+   If you want to add a toggle input item that the user can select or deselect, use a check box input item.
+
+   <input type="checkbox" name="Agree" value="yes" />
+
+   name=”Agree” - The name used to identify this input on the server side script.
+
+   value=”yes” - This is the value returned to the server if the user selects this check box. This is an optional
+   attribute.
+
+   For example, if you created a check box like this:
+
+   <input type="checkbox" name="sendmail" />
+   and if the user selects the check box, the server side script will receive: sendmail='on'
+
+   If the check box is like this:
+
+   <input type="checkbox" name="sendmail" value="send" />
+   if the user selects this check box before submitting, the handler script will receive: sendmail='send'
+
+   checked=’checked’ - Having the ‘checked’ attribute makes the check box ‘on’ by default.
+
+   Example:
+   <input type="checkbox" name="sendmail" value="send" checked="checked" />
+
+   Radio Button
+
+   Radio buttons are for selecting one item from a set of choices. Use radio buttons when the choices are not too
+   large (less than 10).
+   Each individual button need to be created using input type ‘radio’
+
+   Example:
+   How do you rate the content at this site?
+   <p>
+   <input type="radio" name="rating" value="excellent">Excellent !!! <br/>
+   <input type="radio" name="rating" value="good">Good  <br/>
+   <input type="radio" name="rating" value="bad">Bad  <br/>
+   </p>
+
+   If the user selects excellent, the server side script will receive: rating='excellent'.
+
+   You can add ‘checked’ attribute to make a radio item selected by default.
+
+   Drop down list
+
+   When you want to create a list of items for the user to select from, create a drop down list. Unlike the input tags
+   we saw before, the list has two HTML tags associated – the <select> tag and the <option> tag.
+
+   You can create a list using the <select></select> tag and the items in the list using the <option> tag.
+
+   An example will make it clear:
+
+   Shipping method:
+   <select name="shipping">
+    <option value="1"> standard</option>
+    <option value="2"> 2-day</option>
+    <option value="3"> overnight</option>
+   </select>
+   If the user selects 2-day, the server side script will receive: shipping=2.
+
+   If you want to make an option selected by default, you can add “selected” attribute to the <option> tag.
+
+   <option value="1" selected='selected'>Standard</option>
+   makes the standard shipping method selected by default.
+
+   Multi-line text
+
+   When you want to get a bunch of text from the user, the Textarea can be used.
+
+   A TextArea is created using the tag <textarea>
+
+   Attributes:
+   name=”descr”
+   the name identifies this TextArea in the server side script.
+
+   cols=”columns”
+   Defines the width (number of characters per line) the text area can accommodate without scrolling.
+
+   rows=”rows”
+   Defines the number of lines (number of rows) the text area can accommodate without scrolling.
+
+   Example:
+
+   Enter your suggestions here:
+   <textarea name="suggestions" rows="5" cols="25"></textarea>
+   If you want to provide some value in the text area by default, you can give it like this:
+
+   <textarea name="suggestions" rows="5" cols="25">my suggestions are:</textarea>
+
+    Password input
+
+    Password Input
+
+    Login screens usually have a password field where the user enters his password. You can create a password field by using the input type ‘password’.
+
+    A password field can be created using the following code:
+
+    <input type="password" name="pwd" />
+
+    Other attributes:
+
+    maxlength=”maxChar”
+    the maximum length (in characters) the password can have
+
+    value=”textValue”
+    The default value that should appear in the password field.
+
+    “Hidden” input
+
+    The ‘hidden’ input is not shown to the user. Instead you yourself will provide the value of the field.
+
+    Usually, the hidden fields will contain configuration information for the server-side action script that handles the form data.
+
+    Example:
+
+    <input type="hidden" name="admin-email" value="me@myserver.com" />
+    Image input type
+
+    You can use your own beautiful images instead of the submit button to submit a form.
+
+    When the user clicks on the image, the form is submitted.
+
+    Use the following code to create an image input item.
+
+    <input type="image" name='signup' src="images/signup.gif" />
+    src=”image_url”
+    The URL of the image file to be loaded. You can specify the relative URL to the image file.
+
+    Name
+    Identifies the image that was clicked. The co-ordinates of the location where the user clicked is passed like this:
+    image_name.x=x-coordinate and image_name.y=y-coordinate
+
+    File upload
+
+    File upload box
+
+    You would have seen pages which allows the user to upload a file. The FILE input adds a file upload box to the form.
+
+    Here is the syntax of FILE input type:
+
+    <input type="file" name="name" />
+    name=”name”
+    The name used to identify this file input item in the server side script.
+
+    In most of the browsers, the FILE input will create a filename box with a ‘Browse …’ button.
+
+    While creating a form with file upload support, do remember to add an attribute ‘enctype’ wth value
+    “multipart/form-data” in your <form> tag.
+
+    Here is an example:
+
+    <form enctype="multipart/form-data" method="post">
+    <p>
+       Photo: <input type="file" name='photo' />
+    </p>
+    <input type="submit" value="submit" />
+    </form>
+    General button
+
+    A button input just displays a button on the form. To add meaning to the button, we need to add JavaScript code to
+    handle the event when the user presses the button.
+
+    An example of button is given below:
+
+    <input type="button" onclick="javascript:alert('Clicked');" value="Click!">
+    This code displays a button with label “Click!”. On pressing the button, a message box
+    with message ‘Clicked’ is displayed.
+
+    Reset button
+
+    When the user presses the Reset button, all the elements in the form are reset to their default values.
+    The code below creates a reset button
+
+    <input type="reset" value="Start Over">
+    This code displays a button with label ‘Start Over’.
