@@ -51,6 +51,10 @@ ________________________
 
 - _index.html_ - a file responsible for structure of our project.
 
+- _result.html_ and _wish-list.html_ - our 2 other pages for result - where Santa choose on your gift and wish-list - a list of your wishes page.
+
+- _html-form-description.txt_ - a file with in detail explanation on HTML form and different types of input tags with it's attributes.
+
 - _Readme.md_ - a file with explanations and any information about the project, how to run it, what it is for etc.
 
 - _cheat-sheet.md_ - file with quick overlook for key namings and their explanations.

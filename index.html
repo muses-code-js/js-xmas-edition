@@ -13,7 +13,7 @@
 </header>
 
 <section>
-  <form action="submitWishForm">
+  <form action="submitWishForm" enctype="multipart/form-data" method="post">
     <p>Dear Santa,</p>
     <p>My name is <input type="text" name="myName"> and I live in</p>
     <p>
@@ -35,9 +35,9 @@
       <textarea name="description" rows="2" cols="45"></textarea>
       this Christmas.
     </p>
-    <p>Upload image <input type="file" onchange="uploadFile()"></p>
+    <p>Upload image <input type="file" name="wishImage" onchange="uploadFile()"></p>
     <p>
-      <button type="submit" onclick="submitWish()">Send your letter to Santa</button>
+      <button name="submit" onclick="submitWish()">Send your letter to Santa</button>
     </p>
   </form>
 </section>
