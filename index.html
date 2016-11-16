@@ -13,11 +13,13 @@
 </header>
 
 <section>
-  <form action="submitWishForm" enctype="multipart/form-data" method="post">
+  <form enctype="multipart/form-data" method="post" name="letterToSanta">
     <p>Dear Santa,</p>
-    <p>My name is <input type="text" name="myName"> and I live in</p>
+    <p>My name is <input type="text" name="myName" class="name"> and I live
+      in</p>
     <p>
       <select name="city">
+        <option value=""></option>
         <option value="adelaide">Adelaide</option>
         <option value="brisbane">Brisbane</option>
         <option value="cairns">Cairns</option>
@@ -37,7 +39,9 @@
     </p>
     <p>Upload image <input type="file" name="wishImage" onchange="uploadFile()"></p>
     <p>
-      <button name="submit" onclick="submitWish()">Send your letter to Santa</button>
+      <button name="submit" onclick="validateForm()">
+        Send your letter to Santa
+      </button>
     </p>
   </form>
 </section>
@@ -48,7 +52,9 @@
       <a href="https://twitter.com/NodeGirlsSydney">@NodeGirlsSydney</a>
       <a href="https://twitter.com/NodeGirlsMelb">@NodeGirlsMelb</a>
     </li>
-    <li>Facebook: <a href="https://www.facebook.com/NodeGirlsAustralia">NodeGirlsAustralia</a></li>
+    <li>Facebook:
+      <a href="https://www.facebook.com/NodeGirlsAustralia">NodeGirlsAustralia</a>
+    </li>
     </ul>
   <ul class="float-right">
     <li>Website: <a href="http://nodegirls.com.au">http://nodegirls.com.au</a></li>
@@ -56,6 +62,6 @@
   </ul>
 </footer>
 
-<script src="js/level1.js"></script>
+<script src="js/validation.js"></script>
 </body>
 </html>

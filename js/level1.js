@@ -23,15 +23,49 @@
     Input Validations.
     =================
 
+    * Client-side validation:
     Input validations are essential for any web form since it helps the web site
     visitor submit the right input. Input validations are often written in the
-    client-side scripting language – JavaScript. (JavaScript runs inside the
-    visitor’s web browser and gives quick feedback).
+    client-side language – JavaScript.
+    Validating form input with JavaScript is easy to do and can save a lot of
+    unnecessary calls to the server as all processing is handled by the web
+    browser. It can prevent people from leaving fields blank, from entering too
+    little or too much or from using invalid characters.
 
-    It is required to do the validations on the server side as well. This is
-    because JavaScript is an optional component that can be disabled and avoided.
-    The server-side script should make sure that the data it processes is a
-    valid form submission.
+    For an alternative approach to client-side form validation, without
+    JavaScript, check on HTML5 Form Validation which is available now in most
+    modern browsers.
+    https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation
+
+    * Server-side validation:
+    When form input is important, it should always be verified using a secure
+    server-side script. Otherwise a browser with JavaScript disabled, or a hacker
+    trying to compromise your site, can easily submit invalid data.
+
+ */
+
+/*
+    To validate our form we will need to follow next steps:
+        1. Get value from form
+        2. General validation:
+            - not empty
+            - min length 2
+            - max length 250
+            - only letters
+            - only numbers
+            - letters and numbers
+        3. Individual validation
+            - for name
+            - drop down - city
+            - description
+            - file type
+            - file size
+ */
+
+/*
+    1. Get value from the form.
+
+       We will need to
  */
 
 
