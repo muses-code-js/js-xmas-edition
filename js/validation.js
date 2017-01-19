@@ -25,7 +25,7 @@ var error = '';
 var errors = [];
 
 
-function emptyError (value) {
+function emptyFieldError (value) {
   if(value == '') {
     error = 'This field cannot be empty';
     return errors.push(error);
@@ -71,24 +71,26 @@ function onlyNumbersLettersError (value) {
 }
 
 function nameValidation (value) {
-  emptyError(value);
+  emptyFieldError(value);
   minLengthError(value);
   maxLengthError(value);
   onlyLettersError(value);
 }
 
 function descriptionValidation (value) {
-  emptyError(value);
+  emptyFieldError(value);
   minLengthError(value);
   maxLengthError(value);
   onlyNumbersLettersError(value);
 }
 
 function cityValidation (value) {
-  emptyError(value);
+  emptyFieldError(value);
 }
 
-function validateForm () {
+function validateForm (e) {
+  errors = [];
+  e.preventDefault();
   var name = document.letterToSanta.myName.value;
   var city = document.letterToSanta.city.value;
   var behavior = document.letterToSanta.goodVSnaughty.value;
@@ -105,3 +107,9 @@ function validateForm () {
     console.log (errors);
   }
 }
+
+
+// onSubmit ->
+//   validateForm()
+//   if error log errors
+//   alert successfully submitted form

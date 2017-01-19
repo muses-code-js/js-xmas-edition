@@ -66,6 +66,60 @@
     1. Get value from the form.
 
        We will need to
+
+       - no eventPreventDefault first - one of the steps
+       - no clean up of errors first
+ */
+
+
+/*
+1. Get element from the page (name will be the example)
+        var name = document.letterToSanta.myName.value;
+2. Validate `name` value
+ var error = '';
+ var errors = [];
+         function nameValidation (value) {
+             if(value == '') {
+                 error = 'This field cannot be empty';
+                 return errors.push(error);
+             }
+             if (value < 2){
+                 error = 'This field should be longer then 1 character';
+                 return errors.push(error);
+             }
+             if (value > 250){
+                 error ='This field cannot be longer then 250 characters';
+                 errors.push(error);
+             }
+
+
+             3. Regex (only letters)
+
+             if (value != '//') {
+                 error = 'This field can have only letters';
+                 errors.push(error);
+             }
+
+             return error;
+         }
+4. OnSubmit call validate name (no eventPreventDefault)
+5. Event bubbling ... eventPreventDefault .... (add it on html l42)
+6. Display success or errors
+7. Clean errors ????
+8. Do validation for all fields
+9. Refactoring/cleaning:
+    - subtract repeating checks into functions
+         function emptyFieldError (value) {
+             if(value == '') {
+                 error = 'This field cannot be empty';
+                 return errors.push(error);
+             }
+             return error;
+         }
+    - create a main function validate form that includes calling on each field validation
+    - onSubmit we call vslidateForm function and check on errors
+10. If errors change css + append errors messages into page
+11. If no errors redirect to wish list page
  */
 
 
