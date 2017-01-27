@@ -31,7 +31,7 @@ function emptyFieldError (value) {
     return errors.push(error);
   }
 
-  return error;
+  return errors;
 }
 
 function minLengthError (value){
@@ -40,7 +40,7 @@ function minLengthError (value){
     return errors.push(error);
   }
 
-  return error;
+  return errors;
 }
 
 function maxLengthError (value) {
@@ -49,36 +49,40 @@ function maxLengthError (value) {
     errors.push(error);
   }
 
-  return error;
+  return errors;
 }
 
 function onlyLettersError (value) {
-  if (value != '//') {
+  if (!/^[a-zA-Z]$/.test(value)) {
     error = 'This field can have only letters';
     errors.push(error);
   }
 
-  return error;
+  return errors;
 }
 
 function onlyNumbersLettersError (value) {
-  if (value != '//') {
+  if (!/^[a-zA-Z0-9]$/.test(value)) {
     error = 'This field can have only numbers and letters';
     return errors.push(error);
   }
 
-  return error;
+  return errors;
 }
 
 function nameValidation (value) {
-  emptyFieldError(value);
+  if(emptyFieldError(value)){
+    return;
+  }
   minLengthError(value);
   maxLengthError(value);
   onlyLettersError(value);
 }
 
 function descriptionValidation (value) {
-  emptyFieldError(value);
+  if(emptyFieldError(value)){
+    return;
+  }
   minLengthError(value);
   maxLengthError(value);
   onlyNumbersLettersError(value);
@@ -107,9 +111,3 @@ function validateForm (e) {
     console.log (errors);
   }
 }
-
-
-// onSubmit ->
-//   validateForm()
-//   if error log errors
-//   alert successfully submitted form

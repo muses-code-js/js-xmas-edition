@@ -107,7 +107,16 @@
 6. Display success or errors
 7. Clean errors ????
 8. Do validation for all fields
-9. Refactoring/cleaning:
+9. If field is empty do not do other checks
+ function nameValidation (value) {
+    if(emptyFieldError(value)){
+        return;
+    }
+    minLengthError(value);
+    maxLengthError(value);
+    onlyLettersError(value);
+ }
+10. Refactoring/cleaning:
     - subtract repeating checks into functions
          function emptyFieldError (value) {
              if(value == '') {
@@ -118,8 +127,14 @@
          }
     - create a main function validate form that includes calling on each field validation
     - onSubmit we call vslidateForm function and check on errors
-10. If errors change css + append errors messages into page
-11. If no errors redirect to wish list page
+11. If errors change css + append errors messages into page
+12. If no errors redirect to wish list page
+- and save all values to localstorage
+
+--------------------------------------
+ Level 2
+
+
  */
 
 
