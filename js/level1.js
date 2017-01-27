@@ -126,10 +126,12 @@
              return error;
          }
     - create a main function validate form that includes calling on each field validation
-    - onSubmit we call vslidateForm function and check on errors
+    - onSubmit we call vslidateForm function and check on errors (html)
 11. If errors change css + append errors messages into page
+    - refactor: subtract function handlingErrors from validateForm
 12. If no errors redirect to wish list page
 - and save all values to localstorage
+- clean the fields
 
 --------------------------------------
  Level 2

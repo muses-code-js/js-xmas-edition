@@ -1,4 +1,3 @@
-
 /*
     1. Get value from form
     2. General validation:
@@ -20,10 +19,10 @@
  */
 
 
-
-var error = '';
 var errors = [];
 
+
+/////////////////////////////////  validation /////////////////////////
 
 function emptyFieldError (value) {
   if(value == '') {
@@ -92,6 +91,19 @@ function cityValidation (value) {
   emptyFieldError(value);
 }
 
+function handleErrors (errors) {
+  var onSuccessWindow = document.getElementsByClassName('on-success');
+  if (errors.length < 1){
+    console.log('Success');
+    onSuccessWindow[0].classList.remove('hiddenWindow');
+    //save data to localstorage
+    //clean all fields
+  } else {
+    //add .error to matching field + append error text
+    console.log (errors);
+  }
+}
+
 function validateForm (e) {
   errors = [];
   e.preventDefault();
@@ -105,9 +117,19 @@ function validateForm (e) {
   cityValidation(city);
   descriptionValidation(description);
 
-  if (errors.length < 1){
-    console.log('Success');
-  } else {
-    console.log (errors);
-  }
+  handleErrors(errors);
 }
+
+//////////////////////// handle on success window ////////////////////////////////////
+
+function hideOnSuccessWindow() {
+  var onSuccessWindow = document.getElementsByClassName('on-success');
+  onSuccessWindow[0].classList.add('hiddenWindow');
+}
+
+function redirectToWishlist() {
+  window.location.href = 'wish-list.html';
+}
+
+
+////////////////////////////  localstorage   //////////////////////////////////////

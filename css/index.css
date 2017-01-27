@@ -8,6 +8,28 @@ section{
     min-height: 700px;
 }
 
+.on-success {
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    width: 35%;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background: white;
+    text-align: center;
+}
+
+.hiddenWindow {
+    display: none;
+}
+
+@media only screen and (max-width : 680px) {
+    .on-success h1 {
+        font-size: 30px;
+    }
+}
+
 a img {
     height: 150px;
     width: 150px;
