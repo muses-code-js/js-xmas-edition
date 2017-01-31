@@ -20,7 +20,7 @@
 
 
 var errors = [];
-
+var localStorageIndex = 0
 
 /////////////////////////////////  validation /////////////////////////
 
@@ -96,8 +96,9 @@ function handleErrors (errors) {
   if (errors.length < 1){
     console.log('Success');
     onSuccessWindow[0].classList.remove('hiddenWindow');
-    //save data to localstorage
-    //clean all fields
+    saveDatatoLocalStorage()  //save data to localstorage
+    document.getElementById("letterToSantaForm").reset(); //clean all fields
+
   } else {
     //add .error to matching field + append error text
     console.log (errors);
@@ -133,3 +134,21 @@ function redirectToWishlist() {
 
 
 ////////////////////////////  localstorage   //////////////////////////////////////
+
+function saveDatatoLocalStorage() {
+	// get the data that you want to save
+	var name = document.letterToSanta.myName.value;
+	var description = document.letterToSanta.description.value;
+
+	// setting a unique key for the data
+	var key = 'user'+ localStorageIndex
+
+	// saving the data as an object
+	localStorage.setItem(key, JSON.stringify({
+    username: name,
+    giftDescription: description
+	}));
+
+	// incrementing the index counter
+	localStorageIndex++;
+}

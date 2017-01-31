@@ -77,5 +77,10 @@ make use of unique id to identify the local storage values ( .. )
 link to relational db for further readings..
 
 
+You can view the information stored in the local Storage by
+ - opening the console window
+ - selecting the Application tab
+ - Within the Storage Menu, click on the down arrow near LocalStorage option
+ - select the file:// to view the local storage details saved s
 
 */
