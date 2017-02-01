@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/wishlist.css">
 </head>
-<body>
+<body onload="displayWishes()">
 
 	<header>
 		<p><a href="index.html"> Add more wishes <img src="img/pencil.png" alt="pencil"> </a></p>
@@ -16,12 +16,13 @@
 	<section>
 		<div class="wish-list-container">
 			<h1> List of Wishes </h1>
-			<div class="wish-list">
-				<ul>
+			<div class="wish-lists">
+				<ul id="wish-list">
 					<li> A day with Node girls</li>
 					<li> A new laptop </li>
 					<li> An extra holiday </li>
 					<li> Test for another case </li>
+
 				</ul>
 			</div>
 			<p><a href="index.html"> Add more wishes </a></p>
@@ -42,6 +43,8 @@
 		<li>e-mail: <a href="mailto:info@nodegirls.com.au">info@nodegirls.com.au</a></li>
 	</ul>
 </footer>
+
+<script src="js/validation.js"></script>
 </body>
 
 </html>

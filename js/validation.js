@@ -139,9 +139,7 @@ function saveDatatoLocalStorage() {
 	// get the data that you want to save
 	var name = document.letterToSanta.myName.value;
 	var description = document.letterToSanta.description.value;
-
-	// setting a unique key for the data
-	var key = 'user'+ localStorageIndex
+	var key = 'user'+ localStorageIndex // setting a unique key for the data
 
 	// saving the data as an object
 	localStorage.setItem(key, JSON.stringify({
@@ -149,6 +147,18 @@ function saveDatatoLocalStorage() {
     giftDescription: description
 	}));
 
-	// incrementing the index counter
-	localStorageIndex++;
+	localStorageIndex++; // incrementing the index counter
+}
+
+function displayWishes() {
+	var ul = document.getElementById('wish-list');
+	var li, userKey;
+	for(var i=0; i<localStorage.length; i++) {
+		console.log ('index is '+ i)
+		li = document.createElement('li');
+		userKey = 'user'+i
+		var data = JSON.parse(localStorage.getItem(userKey));
+		li.appendChild(document.createTextNode(data.giftDescription));
+		ul.appendChild(li);
+	}
 }
