@@ -20,7 +20,7 @@
 
 
 var errors = [];
-var localStorageIndex = 0
+var localStorageIndex = localStorage.length
 
 /////////////////////////////////  validation /////////////////////////
 
