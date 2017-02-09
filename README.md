@@ -1,4 +1,4 @@
-# js-xmas-edition
+# Letter to Santa
 
 JavaScript workshop (forms, inputs, regex, ajax, localstorage etc)
 
@@ -9,7 +9,7 @@ Check on slides, click [here]()
 
 ## Feedback
 
-To leave feedback click [here]()
+To leave feedback click [here](https://goo.gl/forms/ZKqQvSUyUQH1kmRW2)
 
 
 ___________________
