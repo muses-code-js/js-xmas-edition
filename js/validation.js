@@ -97,7 +97,7 @@ function handleErrors (errors) {
     console.log('Success');
     onSuccessWindow[0].classList.remove('hiddenWindow');
     saveDatatoLocalStorage()  //save data to localstorage
-    document.getElementById("letterToSantaForm").reset(); //clean all fields
+    document.querySelector('.letterToSantaForm').reset(); //clean all fields
 
   } else {
     //add .error to matching field + append error text
@@ -151,7 +151,7 @@ function saveDatatoLocalStorage() {
 }
 
 function displayWishes() {
-	var ul = document.getElementById('wish-list');
+	var ul = document.querySelector('.wish-list');
 	var li, userKey;
 	for(var i=0; i<localStorage.length; i++) {
 		console.log ('index is '+ i)
