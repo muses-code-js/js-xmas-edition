@@ -9,18 +9,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-header p:first-of-type {
-    position: relative;
-    top: 15px;
-    right: 70%;
-}
-
-header a {
-    position: relative;
-    top: 10px;
-    left: 75%;
+    white-space: nowrap;
 }
 
 header, footer {

@@ -1,11 +1,13 @@
-section{
-    background: url(../img/letter-frame.png) no-repeat center center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    background-color: #DBDFBB;
-    min-height: 700px;
+header{
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: space-between;
+	justify-content: space-between;
+}
+
+.wishlist-container, .result-container {
+	flex: 0;
+	padding-top: 1%;
 }
 
 .on-success {
@@ -31,22 +33,64 @@ section{
 }
 
 a img {
-    height: 150px;
-    width: 150px;
-    position: absolute;
-    top: -1%;
-    left: 120%;
+	position: absolute;
+	height: 8em;
+	width: 8em;
+	top: 4%;
 }
 
 a img:hover {
-    height: 170px;
-    width: 170px;
+    height: 10em;
+    width: 10.5em;
+}
+
+#right-image {
+	right:2%;
+}
+
+#left-image {
+	left:2%;
+}
+
+
+section{
+	 background: url(../img/letter-frame.png) no-repeat center center;
+	 -webkit-background-size: contain;
+	 -moz-background-size: contain;
+	 -o-background-size: contain;
+	 background-size: contain;
+	 background-color: #DBDFBB;
+	 min-height: 56.5em;
+	 display: flex;
+	 flex-direction: column;
+	 flex-wrap: wrap;
+	 align-items: center;
+	 justify-content: center;
 }
 
 form {
-    width: 350px;
-    height: 400px;
-    margin: 100px auto;
-    text-align: center;
-    padding-left: 17px;
+	width: 22em;
+	flex: 0;
+	padding-bottom: 15em;
+	text-align: center;
+}
+
+@media all and (max-width: 640px){
+	form {
+		width: 19em;
+		font-size: 0.75em;
+	}
+	input[type=text], textarea {
+        width:80%;
+    }
+    a img {
+		height: 5em;
+		width: 5em;
+	}
+
+a img:hover {
+    height: 7em;
+    width: 8.5em;
+}
+
 }
