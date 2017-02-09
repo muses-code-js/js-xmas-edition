@@ -60,21 +60,39 @@
             - description
             - file type
             - file size
+        4. Validate whole form when we submit it
  */
 
 /*
     1. Get value from the form.
 
-       We will need to
+       First of all we will need to access our HTML, to do so we will use `document`.
+       If you don't know how DOM works you can check on info here:
+       https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+       Or if you tried our `Intro to Javascript` workshop it is in more details in
+       part 3.
+       https://github.com/node-girls-australia/js-intro-workshop
 
-       - no eventPreventDefault first - one of the steps
-       - no clean up of errors first
+       So let's get one value out to see how it works, for that you need to check on
+       index.html file as well - to see how we are getting element out knowing classes:
+       var name = document.letterToSanta.myName.value;
+
+       TODO: now it is your turn to get other values out. Create variables called
+       `city`, `behavior`, `description` and store in them appropriate values from the form.
+ */
+
+
+
+/*
+     2. Validate one value to be right.
+
+        Let's continue our example `name` and validate it.
+
  */
 
 
 /*
-1. Get element from the page (name will be the example)
-        var name = document.letterToSanta.myName.value;
+
 2. Validate `name` value
  var error = '';
  var errors = [];
@@ -139,10 +157,6 @@
 
  */
 
-
-function submitWish(){
-    alert('You have just submitted your wish');
-}
 
 function uploadFile(){
 }
