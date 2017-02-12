@@ -16,3 +16,8 @@ Additional Tasks
 1. Ajax calls (Flickr retrieval)
 
 */
+
+/* Level 1 gets the information from the user, level 2 displays part of that information to the user as a list.
+Now lets get to the fun part where the santa gifts the user with a gift.
+
+what we need to do is similar to level 2, but with few tweaks..
