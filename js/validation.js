@@ -162,3 +162,9 @@ function displayWishes() {
 		ul.appendChild(li);
 	}
 }
+
+/////////////////////////////////  Random number generation  /////////////////////////
+
+function getRandomNumber(limit) {
+	randomNumber = Math.floor(Math.random() * limit) + 1
+}
