@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/result.css">
 </head>
-<body>
+<body onload="fillContent()">
 
 <header>
     <p><a href="index.html">Add more wishes <img src="img/pencil.png" alt="pencil"></a></p>
@@ -15,10 +15,13 @@
 <section>
     <div class="gift-section">
         <p>
-            Santa checked on his list and find out that you were <i>________</i> this year.
+            Santa checked on his list and find out that you were <span class='attitude'><i>     </i></span> this year.
         </p>
         <p>
             And he sent you a following gift!
+        </p>
+        <p class="santa-gift-text">
+
         </p>
         <img src="" alt="santa's gift" class="santa-gift">
     </div>
