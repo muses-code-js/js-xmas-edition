@@ -32,3 +32,8 @@ header p:first-of-type img:hover {
     height: 210px;
     width: 150px;
 }
+
+.santa-gift-text {
+	color: red;
+	font-style: italic;
+}
