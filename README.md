@@ -1,10 +1,10 @@
 # Letter to Santa
 
-JavaScript workshop (forms, inputs, regex, ajax, localstorage etc)
+JavaScript workshop (forms, inputs, validation, events, RegExp, ajax, local storage)
 
 ## Slides
 
-Check on slides, click [here]()
+Check on slides, click [here](http://slides.com/tanyabutenko/ngs-intro-14#/)
 
 
 ## Feedback
@@ -48,10 +48,12 @@ ________________________
 
 - img folder - a place where we can store images that we will use on our web-page
 
-- Js folder contains javaScript files that makes our project works, it defines content and make static page functional.
+- Js folder contains JavaScript files that makes our project works, it defines content and make static page functional.
     It contains 3 files:
     - _level1.js_ - create web form and different types of input, regular expressions
-
+    - _level2.js_ - store input in local storage
+    - _level3.js_ - display all wishes on wish-list page and randomly give present on result page.
+    - _extra-steps.js_ - extra tasks you can do if you are interested to learn more things and modify your small project.
 
 - _index.html_ - a file responsible for structure of our project.
 
@@ -59,6 +61,10 @@ ________________________
 
 - _html-form-description.txt_ - a file with in detail explanation on HTML form and different types of input tags with it's attributes.
 
+- _regular-expressions.txt_ - a file with links to cheat sheet, more information and games with Regular Expressions or RegExp.
+
 - _Readme.md_ - a file with explanations and any information about the project, how to run it, what it is for etc.
 
 - _cheat-sheet.md_ - file with quick overlook for key namings and their explanations.
+
+- _LICENSE_ - our MIT license file.
