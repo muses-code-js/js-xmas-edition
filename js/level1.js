@@ -213,11 +213,9 @@
       TODO: 3. Inside of the `validateForm` function call:
       `event.preventDefault();`
 
+
       Now if you try to submit form with empty name field it should print
       you all errors.
-
-
-
  */
 
 
@@ -248,7 +246,7 @@
 10. If errors change css + append errors messages into page
     - refactor: subtract function handlingErrors from validateForm
 11. If no errors redirect to wish list page
-- and save all values to localstorage
+- and save all values to local storage
 - clean the fields
 
  */
