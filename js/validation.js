@@ -2,6 +2,7 @@
 /////////////////////////////////  validation /////////////////////////
 
 var errors = [];
+var error = '';
 var localStorageIndex = localStorage.length + 1;
 
 function emptyFieldError (value) {
@@ -101,7 +102,7 @@ function validateForm (e) {
   handleErrors(errors);
 }
 
-//////////////////////// handle on success window ////////////////////////////////////
+//////////////////////// handle on-success window ////////////////////////////////////
 
 function hideOnSuccessWindow() {
   var onSuccessWindow = document.getElementsByClassName('on-success');
@@ -113,7 +114,7 @@ function redirectToWishlist() {
 }
 
 
-////////////////////////////  localstorage   //////////////////////////////////////
+////////////////////////////  local storage   //////////////////////////////////////
 
 function saveDatatoLocalStorage() {
 	// get the data that you want to save
