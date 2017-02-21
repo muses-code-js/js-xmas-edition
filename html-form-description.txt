@@ -1,10 +1,11 @@
 HTML Form description.
 
-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------
 
 THE HTML <form> TAG:
 
-All the input elements should be enclosed within the opening and closing <form> tags like this:
+All the input elements should be enclosed within the opening
+and closing <form> tags like this:
 
    <form>
     The input elements go here….
@@ -12,15 +13,19 @@ All the input elements should be enclosed within the opening and closing <form> 
 
 The following are the attributes of the form tag:
 
-  action = ”Link to the form processor script” - points to the server side script (the ‘back end’) that handles
-   the form submission.
+  action = ”Link to the form processor script” - points to the
+  server side script (the ‘back end’) that handles the form
+  submission.
 
   method = ( either GET or POST)
-   In simple terms, if you use GET method, the form submission values are passed as part of the URL. If it is POST, the
-   information is sent to the server as part of the data body and will not be visible in the URL box in the user’s
-   browser. If you don’t specify the method, GET is taken by default.
+   In simple terms, if you use GET method, the form submission
+   values are passed as part of the URL. If it is POST, the
+   information is sent to the server as part of the data body
+   and will not be visible in the URL box in the user’s browser.
+   If you don’t specify the method, GET is taken by default.
 
-  Suppose your form handler page is a Javascript script named level1.js. the HTML form code would be:
+  Suppose your form handler page is a Javascript script named
+  level1.js. the HTML form code would be:
 
    <form action="level1.js" method="post">
    .....your input items here .....
@@ -37,70 +42,84 @@ The following are the attributes of the form tag:
 
 THE FORM INPUT ELEMENTS:
 
-   You can have different types of input elements in a form. Examples are: check boxes, radio buttons, simple text
+   You can have different types of input elements in a form.
+   Examples are: check boxes, radio buttons, simple text
    boxes etc. Let us see how to create input elements for a form.
 
 1. Single line text box
 
-   Can be used to collect the name, email, phone number etc from your web site visitors.
+   Can be used to collect the name, email, phone number etc from
+   your web site visitors.
 
    Here is the code to create a simple text box:
 
    <input type="text" name="FirstName" />
 
-   type=”text” - tells the browser that a single line text input box should be created.
+   type=”text” - tells the browser that a single line text input
+   box should be created.
 
-   name=”FirstName” - gives a name to the field. The name is used to identify the field on the server side.
+   name=”FirstName” - gives a name to the field. The name is used
+   to identify the field on the server side.
 
    There are some more attributes that you can use with the text box
 
-   value=”default value” - The text you give as value will be displayed by default in the text box.
+   value=”default value” - The text you give as value will be
+   displayed by default in the text box.
 
    Example:
-   <input TYPE="text" name="FirstName" value="Your FirstName here,Please" />
+   <input TYPE="text" name="FirstName" value="Your FirstName here"/>
 
-   maxlength=”maxChars” - Specifies the maximum number of characters the user can enter into this text box.
+   maxlength=”maxChars” - Specifies the maximum number of characters
+   the user can enter into this text box.
 
 2. Check box
 
-   If you want to add a toggle input item that the user can select or deselect, use a check box input item.
+   If you want to add a toggle input item that the user can select or
+   deselect, use a check box input item.
 
    <input type="checkbox" name="Agree" value="yes" />
 
-   name=”Agree” - The name used to identify this input on the server side script.
+   name=”Agree” - The name used to identify this input on the server
+   side script.
 
-   value=”yes” - This is the value returned to the server if the user selects this check box. This is an optional
-   attribute.
+   value=”yes” - This is the value returned to the server if the user
+   selects this check box. This is an optional attribute.
 
-   checked="checked" - Having the ‘checked’ attribute makes the check box ‘on’ by default.
+   checked="checked" - Having the ‘checked’ attribute makes the check
+   box ‘on’ by default.
 
    Example:
-   <input type="checkbox" name="sendmail" value="send" checked="checked" />
+   <input type="checkbox" name="sendmail" value="send" checked="checked"/>
 
 3. Radio Button
 
-   Radio buttons are for selecting one item from a set of choices. Use radio buttons when the choices are not too
-   large (less than 10).
+   Radio buttons are for selecting one item from a set of choices. Use
+   radio buttons when the choices are not too large (less than 10).
    Each individual button need to be created using input type ‘radio’
 
    Example:
    How do you rate the content at this site?
    <p>
-       <input type="radio" name="rating" value="excellent"> Excellent !!! <br/>
+       <input type="radio" name="rating" value="excellent"> Excellent<br/>
        <input type="radio" name="rating" value="good"> Good <br/>
        <input type="radio" name="rating" value="bad"> Bad <br/>
    </p>
 
-   If the user selects excellent, the server side script will receive: rating='excellent'.
+   If the user selects excellent, the server side script will receive:
+   rating='excellent'.
 
-   You can add ‘checked’ attribute to make a radio item selected by default.
+   You can add ‘checked’ attribute to make a radio item selected
+   by default.
 
 4. Drop down list
 
-   When you want to create a list of items for the user to select from, create a drop down list. Unlike the input tags
-   we saw before, the list has two HTML tags associated – the <select> tag and the <option> tag.
+   When you want to create a list of items for the user to select
+   from, create a drop down list. Unlike the input tags we saw before,
+   the list has two HTML tags associated – the <select> tag and the
+   <option> tag.
 
-   You can create a list using the <select></select> tag and the items in the list using the <option> tag:
+   You can create a list using the <select></select> tag and the
+   items in the list using the <option> tag:
 
    Shipping method:
    <select name="shipping">
@@ -109,9 +128,11 @@ THE FORM INPUT ELEMENTS:
        <option value="3"> overnight </option>
    </select>
 
-   If the user selects 2-day, the server side script will receive: shipping=2.
+   If the user selects 2-day, the server side script will receive:
+   shipping=2.
 
-   If you want to make an option selected by default, you can add “selected” attribute to the <option> tag.
+   If you want to make an option selected by default, you can add
+   “selected” attribute to the <option> tag.
 
    <option value="1" selected="selected"> Standard </option>
 
@@ -119,52 +140,62 @@ THE FORM INPUT ELEMENTS:
 
 5. Multi-line text
 
-   When you want to get a bunch of text from the user, the Textarea can be used.
-   A TextArea is created using the tag <textarea>
+   When you want to get a bunch of text from the user, the Textarea
+   can be used. A TextArea is created using the tag <textarea>
 
    Attributes:
    name=”descr” - identifies this TextArea in the server side script.
 
-   cols=”columns” - Defines the width (number of characters per line) the text area can accommodate without scrolling.
+   cols=”columns” - Defines the width (number of characters per line)
+   the text area can accommodate without scrolling.
 
-   rows=”rows” - Defines the number of lines (number of rows) the text area can accommodate without scrolling.
+   rows=”rows” - Defines the number of lines (number of rows) the
+   text area can accommodate without scrolling.
 
    Example:
 
    Enter your suggestions here:
    <textarea name="suggestions" rows="5" cols="25"></textarea>
 
-   If you want to provide some value in the text area by default, you can give it like this:
+   If you want to provide some value in the text area by default,
+   you can give it like this:
 
-   <textarea name="suggestions" rows="5" cols="25">my suggestions are:</textarea>
+   <textarea name="suggestions" rows="5" cols="25">
+      my suggestions are:
+   </textarea>
 
 6. Password Input
 
-    Login screens usually have a password field where the user enters his password. You can create a password field
-    by using the input type ‘password’, as follows:
+    Login screens usually have a password field where the user enters
+    his password. You can create a password field by using the input
+    type ‘password’, as follows:
 
     <input type="password" name="pwd" />
 
     Other attributes:
 
-    maxlength=”maxChar” - the maximum length (in characters) the password can have
+    maxlength=”maxChar” - the maximum length (in characters) the
+    password can have
 
-    value=”textValue” - The default value that should appear in the password field.
+    value=”textValue” - The default value that should appear in the
+    password field.
 
 7. “Hidden” input
 
-    The ‘hidden’ input is not shown to the user. Instead you yourself will provide the value of the field.
+    The ‘hidden’ input is not shown to the user. Instead you yourself
+    will provide the value of the field.
 
-    Usually, the hidden fields will contain configuration information for the server-side action script that
-    handles the form data.
+    Usually, the hidden fields will contain configuration information
+    for the server-side action script that handles the form data.
 
     Example:
 
-    <input type="hidden" name="admin-email" value="me@myserver.com" />
+    <input type="hidden" name="admin-email" value="me@myserver.com"/>
 
 8. Image input type
 
-    You can use your own beautiful images instead of the submit button to submit a form.
+    You can use your own beautiful images instead of the submit button
+    to submit a form.
 
     When the user clicks on the image, the form is submitted.
 
@@ -172,26 +203,32 @@ THE FORM INPUT ELEMENTS:
 
     <input type="image" name='signup' src="images/signup.gif" />
 
-    src=”image_url” - The URL of the image file to be loaded. You can specify the relative URL to the image file.
+    src=”image_url” - The URL of the image file to be loaded. You can
+    specify the relative URL to the image file.
 
-    name="signup" - Identifies the image that was clicked. The co-ordinates of the location where the user clicked
-    is passed like this:
+    name="signup" - Identifies the image that was clicked. The
+    co-ordinates of the location where the user clicked is passed like
+    this:
     image_name.x=x-coordinate and image_name.y=y-coordinate
 
 9. File upload box
 
-    You would have seen pages which allows the user to upload a file. The FILE input adds a file upload box to the form.
+    You would have seen pages which allows the user to upload a file.
+    The FILE input adds a file upload box to the form.
 
     Here is the syntax of FILE input type:
 
     <input type="file" name="name" />
 
-    name=”name” - used to identify this file input item in the server side script.
+    name=”name” - used to identify this file input item in the server
+    side script.
 
-    In most of the browsers, the FILE input will create a filename box with a ‘Browse …’ button.
+    In most of the browsers, the FILE input will create a filename box
+    with a ‘Browse …’ button.
 
-    While creating a form with file upload support, do remember to add an attribute ‘enctype’ wth value
-    “multipart/form-data” in your <form> tag.
+    While creating a form with file upload support, do remember to add
+    an attribute ‘enctype’ wth value “multipart/form-data” in your
+    <form> tag.
 
     Here is an example:
 
@@ -207,20 +244,25 @@ THE FORM INPUT ELEMENTS:
     10.1 Submit button
 
         Button in form has default type = 'submit'.
-        After entering the data, the user presses the submit button which triggers the browser to send the data
-        to the server.
+        After entering the data, the user presses the submit button which
+        triggers the browser to send the data to the server.
 
-        <button name="submit" onclick="alertFormIsSubmitted()"> Submit </button>
+        <button name="submit" onclick="alertFormIsSubmitted()">
+            Submit
+        </button>
 
-        name =”submit” - there can be more than one submit buttons in a form. On the server side, the submit button
-         which was pressed can be identified using the ‘name’ attribute.
-        onclick="someFunction()" - On pressing the button, 'someFunction' will be called.
+        name =”submit” - there can be more than one submit buttons in a
+        form. On the server side, the submit button which was pressed can
+        be identified using the ‘name’ attribute.
+        onclick="someFunction()" - On pressing the button, 'someFunction'
+        will be called.
 
 
     10.2 Reset button
 
-        When the user presses the Reset button, all the elements in the form are reset to their default values.
-        The code below creates a reset button:
+        When the user presses the Reset button, all the elements in the
+        form are reset to their default values. The code below creates
+        a reset button:
 
         <button type="reset"> Start Over </button>
 
@@ -230,7 +272,9 @@ THE FORM INPUT ELEMENTS:
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
 
 
-  PS: It is better to use <button> tag rather then <input> tag with type="button", as <button> tag has more flexibility
-  in styling and it also can take HTML in itself (for example, you want your Submit button to have a green cross image
-  next to 'Submit' word etc).
-  Also <button> tag is more semantically correct then <input> for purposes as submit, reset etc.
+  PS: It is better to use <button> tag rather then <input> tag with
+  type="button", as <button> tag has more flexibility in styling and it also
+  can take HTML in itself (for example, you want your Submit button to have
+  a green cross image next to 'Submit' word etc).
+  Also <button> tag is more semantically correct then <input> for purposes
+  as submit, reset etc.

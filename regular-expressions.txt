@@ -1,0 +1,45 @@
+---------------------------------------
+Regular Expressions
+---------------------------------------
+
+Read about RegExp here, very simple explanation with
+a bunch of examples for everything:
+**  http://eloquentjavascript.net/09_regexp.html
+
+
+A basic RegExp cheat sheet:
+**  https://www.debuggex.com/cheatsheet/regex/javascript
+
+
+---------------------------------------
+Working with regular expressions
+---------------------------------------
+
+Regular expressions are used with the RegExp methods `test`
+and `exec` and with the String methods `match`, `replace`,
+`search` and `split`.
+
+Read in all details and with examples here:
+**  https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
+
+
+----------------------------------------
+Games with RegExp
+----------------------------------------
+
+My favourite is:
+**  https://regexcrossword.com/
+
+Learn RegExp on examples:
+**  https://regexone.com/
+
+More advanced one:
+**  https://alf.nu/RegexGolf
+
+
+----------------------------------------
+RegExp online tool
+----------------------------------------
+
+There is many of them, you can check on following up:
+**  https://regex101.com/
