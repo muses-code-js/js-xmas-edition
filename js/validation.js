@@ -1,28 +1,8 @@
-/*
-    1. Get value from form
-    2. General validation:
-      - not empty
-      - min length 2
-      - max length 250
-      - only letters
-      - only numbers
-      - letters and numbers
-    3. Individual validation
-      - for name
-      - drop down - city
-      - description
-      - file type
-      - file size
-    4. Css:
-      - change for unvalid field - red
-      - warning messages
- */
-
-
-var errors = [];
-var localStorageIndex = localStorage.length + 1
 
 /////////////////////////////////  validation /////////////////////////
+
+var errors = [];
+var localStorageIndex = localStorage.length + 1;
 
 function emptyFieldError (value) {
   if(value == '') {
@@ -96,7 +76,7 @@ function handleErrors (errors) {
   if (errors.length < 1){
     console.log('Success');
     onSuccessWindow[0].classList.remove('hiddenWindow');
-    saveDatatoLocalStorage()  //save data to localstorage
+    saveDatatoLocalStorage();  //save data to localstorage
     document.querySelector('.letterToSantaForm').reset(); //clean all fields
 
   } else {
@@ -139,7 +119,7 @@ function saveDatatoLocalStorage() {
 	// get the data that you want to save
 	var name = document.letterToSanta.myName.value;
 	var description = document.letterToSanta.description.value;
-	var key = 'user'+ localStorageIndex // setting a unique key for the data
+	var key = 'user'+ localStorageIndex; // setting a unique key for the data
 
 	// saving the data as an object
 	localStorage.setItem(key, JSON.stringify({
@@ -155,7 +135,7 @@ function displayWishes() {
 	var li, userKey;
 	for(var i=1; i<=localStorage.length; i++) {
 		li = document.createElement('li');
-		userKey = 'user'+i
+		userKey = 'user' + i;
 		var data = JSON.parse(localStorage.getItem(userKey));
 		li.appendChild(document.createTextNode(data.giftDescription));
 		ul.appendChild(li);
@@ -168,13 +148,13 @@ var behaviorList = {
 	1: 'Very Good',
 	2: 'Good',
 	3: 'Naughty'
-}
+};
 
 var imageUrlList = {
 	1: 'img/gifts/goldGift.jpg',
 	2: 'img/gifts/groupGift.jpeg',
 	3: 'img/gifts/redGift.jpg'
-}
+};
 
 function getRandomNumber(limit) {
 	var randomNumber = Math.floor(Math.random() * limit) + 1;
@@ -204,8 +184,7 @@ function getGiftImage() {
 }
 
 function fillContent() {
-	getBehaviour()
-	getGift()
-	getGiftImage()
-
+	getBehaviour();
+	getGift();
+	getGiftImage();
 }

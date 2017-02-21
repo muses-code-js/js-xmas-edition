@@ -62,7 +62,11 @@
             - file size
         4. Validate whole form when we submit it
         5. Clean the code
+        6. Css:
+            - change for unvalid field - red
+            - warning messages
  */
+
 
 /*
     1. Get value from the form.
@@ -81,7 +85,6 @@
        TODO: now it is your turn to get other values out. Create variables called
        `city`, `behavior`, `description` and store in them appropriate values from the form.
  */
-
 
 
 /*
@@ -128,7 +131,7 @@
 
         So with this changes we gave a value to variable `error` that is equal to
         'This field cannot be empty', and we pushed this `error` to the array of
-        all our errors. Id you console.log(errors) after running the function you
+        all our errors. If you console.log(errors) after running the function you
         should see our error.
 
         TODO: Do same to our minimum and maximum length validations. And in the end
@@ -168,9 +171,50 @@
         TODO: Add one more validation to `nameValidation` function. That will validate
         that we have letters only, if not return us an error 'This field can have only
         letters'
+*/
 
 
-    3. Now, when we have full validation
+/*
+    3. Now, when we have full validation on name field let's check
+      up how it works when we submit the form. If you go to the
+      `index.html` file and check on the form, on the bottom, where
+      we have submit button `Send your letter to Santa` you can see
+      that `onclick` we call function `validateForm`.
+
+      TODO: 1.So let's create function `validateForm`. It will not take
+      any arguments.
+      TODO: 2. Move variable `name` with it's value inside of the function.
+      TODO: 3. Call function `nameValidation` inside our `validateForm`
+      function and pass `name` as an argument.
+      TODO: 4. console.log the `errors` so we can check if it works.
+
+      So, what happened now - when we click submit button we get the value
+      of the name field (if there is any) and after we call function
+      `nameValidation` - that will validate if our name field is empty,
+      will check if it's of an appropriate length and if our name consist
+      only from letters.
+
+      If you try it now nothing will happen. And the reason for that is
+      so default behaviour of the submit button.
+*/
+
+
+/*
+
+    4. Events. Submit button.
+
+
+
+
+      TODO: 1. At `index.html` page add `event` as an argument of the
+      `validateForm` function.
+      TODO: 2. In your javascript file add `event` as an argument to
+      the `validateForm` function.
+      TODO: 3. Inside of the `validateForm` function call:
+      `event.preventDefault();`
+
+      Now if you try to submit form with empty name field it should print
+      you all errors.
 
 
 
@@ -178,13 +222,10 @@
 
 
 /*
-
-4. OnSubmit call validate name (no eventPreventDefault)
-5. Event bubbling ... eventPreventDefault .... (add it on html l42)
-6. Display success or errors
-7. Clean errors ????
-8. Do validation for all fields
-9. If field is empty do not do other checks
+5. Display success or errors
+6. Clean errors ????
+7. Do validation for all fields
+8. If field is empty do not do other checks
  function nameValidation (value) {
     if(emptyFieldError(value)){
         return;
@@ -193,7 +234,7 @@
     maxLengthError(value);
     onlyLettersError(value);
  }
-10. Refactoring/cleaning:
+9. Refactoring/cleaning:
     - subtract repeating checks into functions
          function emptyFieldError (value) {
              if(value == '') {
@@ -203,16 +244,12 @@
              return error;
          }
     - create a main function validate form that includes calling on each field validation
-    - onSubmit we call vslidateForm function and check on errors (html)
-11. If errors change css + append errors messages into page
+    - onSubmit we call validateForm function and check on errors (html)
+10. If errors change css + append errors messages into page
     - refactor: subtract function handlingErrors from validateForm
-12. If no errors redirect to wish list page
+11. If no errors redirect to wish list page
 - and save all values to localstorage
 - clean the fields
-
---------------------------------------
- Level 2
-
 
  */
 
