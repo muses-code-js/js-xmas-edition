@@ -20,7 +20,7 @@ ___________________
 
 
 If you familiar with git you can fork this repository to your machine and start working
-through files starting from README.md file, after that jump to js/level1.js file.
+through files starting from README.md file, after that jump to instructions/level1.md file.
 
 
 If you don't know what is git you can download the folder on your machine - go to
