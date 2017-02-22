@@ -44,26 +44,36 @@ ________________________
 
 
 
-- Css folder contains css files that are responsible for styles and how our project looks on the web.
+- Css folder contains css files that are responsible for styles and how our project looks 
+  on the web.
 
 - img folder - a place where we can store images that we will use on our web-page
 
-- Js folder contains JavaScript files that makes our project works, it defines content and make static page functional.
-    It contains 3 files:
-    - _level1.js_ - create web form and different types of input, regular expressions
-    - _level2.js_ - store input in local storage
-    - _level3.js_ - display all wishes on wish-list page and randomly give present on result page.
-    - _extra-steps.js_ - extra tasks you can do if you are interested to learn more things and modify your small project.
+- instructions folder contains files with step by step instructions on what you should do:
+  It contains 3 files:
+    - _level1.md_ - create web form and different types of input, regular expressions
+    - _level2.md_ - store input in local storage
+    - _level3.md_ - display all wishes on wish-list page and randomly give present on result page.
+    - _extra-steps.md_ - extra tasks you can do if you are interested to learn more things 
+      and modify your small project.
+
+- Js folder contains JavaScript files that makes our project works, it defines content and make 
+  static page functional.
+  Contains _main.js_ file where you write all your code.
 
 - _index.html_ - a file responsible for structure of our project.
 
-- _result.html_ and _wish-list.html_ - our 2 other pages for result - where Santa choose on your gift and wish-list - a list of your wishes page.
+- _result.html_ and _wish-list.html_ - our 2 other pages for result - where Santa choose on your 
+  gift and wish-list - a list of your wishes page.
 
-- _html-form-description.txt_ - a file with in detail explanation on HTML form and different types of input tags with it's attributes.
+- _html-form-description.txt_ - a file with in detail explanation on HTML form and different types 
+  of input tags with it's attributes.
 
-- _regular-expressions.txt_ - a file with links to cheat sheet, more information and games with Regular Expressions or RegExp.
+- _regular-expressions.txt_ - a file with links to cheat sheet, more information and games with 
+  Regular Expressions or RegExp.
 
-- _Readme.md_ - a file with explanations and any information about the project, how to run it, what it is for etc.
+- _Readme.md_ - a file with explanations and any information about the project, how to run it, 
+  what it is for etc.
 
 - _cheat-sheet.md_ - file with quick overlook for key namings and their explanations.
 
