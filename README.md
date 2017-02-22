@@ -25,13 +25,13 @@ through files starting from README.md file, after that jump to js/level1.js file
 
 If you don't know what is git you can download the folder on your machine - go to
 'releases' tab over the yellow line on the page and download folder 'Source code (zip)'.
-Unzip it and start from README.md file, after jump to js/level1.js file.
+Unzip it and start from README.md file, after jump to instructions/level1.md file.
 
 
 To open web-page in your browser go to _index.html_ file and double click on it, you will see
 an option 'open in browser' - preferably use Chrome, but Firefox and Safari will work as well.
 
-Follow the instructions in _level1.js_ file and type code in your Text Editor(it is where your code 
+Follow the instructions in _level1.md_ file and type code in your Text Editor(it is where your code 
 lives and you can write, edit and delete code), in order to see anything that you console.log() you 
 need refresh web page and result will be in web console on the page(you can directly write javaScript 
 code here as well and see result straight away, but as soon as you refresh the page all code will be 
