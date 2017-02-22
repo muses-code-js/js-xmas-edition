@@ -266,14 +266,34 @@ To validate our form we will need to follow next steps:
   Now three of your fields should be validating in a proper way.
   
   
-8. If field is empty do not do other checks
-============================================
-
-
-
-
-9. Refactoring/cleaning
+8. Refactoring/cleaning
 =======================
+
+  As you can see now we have a lot of repetitions in our code. We are checking
+  for the same validations in some fields. Now, when all code works, it is
+  time to do some cleaning and refactor the code.
+  
+  TODO: 1. Let's subtract a check if field is empty to separate function
+  named `emptyFieldError`, which will take one argument `value`. Inside will do
+  the if check and in the end of the function return array of `errors`.
+  TODO: 2. Subtract check of minimum length of the field into function named
+  `minLengthError`, which will take one argument `value`. Inside it will do same
+  as previous one with it's own check.
+  TODO: 3. Do same for new function `maxLengthError`.
+  TODO: 4. Do same for new function `onlyLettersError`.
+  TODO: 5. Do same for new function `onlyNumbersLettersError`.
+  TODO: 6. Now, when we have those separate functions you can call on them inside
+  of `nameValidation`, `descriptionValidation` and `cityValidation`, depending
+  on what we were checking in which field.
+  
+  
+  Now when you submit form it all should work the same. And as you can see, now
+  we do not have that many repetitions in our code and it consist of smaller functions
+  that does some particular action.
+
+
+9. If field is empty do not do other checks
+===========================================
 
 
 
@@ -283,7 +303,7 @@ To validate our form we will need to follow next steps:
 
 
 /*
-8. If field is empty do not do other checks
+9. If field is empty do not do other checks
  function nameValidation (value) {
     if(emptyFieldError(value)){
         return;
@@ -292,23 +312,10 @@ To validate our form we will need to follow next steps:
     maxLengthError(value);
     onlyLettersError(value);
  }
-9. Refactoring/cleaning:
-    - subtract repeating checks into functions
-         function emptyFieldError (value) {
-             if(value == '') {
-                 error = 'This field cannot be empty';
-                 return errors.push(error);
-             }
-             return error;
-         }
-    - create a main function validate form that includes calling on each field validation
-    - onSubmit we call validateForm function and check on errors (html)
 10. If errors change css + append errors messages into page
-    - refactor: subtract function handlingErrors from validateForm
 11. If no errors redirect to wish list page
 - and save all values to local storage
 - clean the fields
-
  */
 
 

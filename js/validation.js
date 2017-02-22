@@ -3,7 +3,7 @@
 
 var errors = [];
 var error = '';
-var localStorageIndex = localStorage.length + 1;
+
 
 function emptyFieldError (value) {
   if(value == '') {
@@ -51,20 +51,18 @@ function onlyNumbersLettersError (value) {
 }
 
 function nameValidation (value) {
-  emptyFieldError(value);
-  //if(emptyFieldError(value) != []){
-  //  return;
-  //}
+  if(emptyFieldError(value).length > 0){
+    return;
+  }
   minLengthError(value);
   maxLengthError(value);
   onlyLettersError(value);
 }
 
 function descriptionValidation (value) {
-  emptyFieldError(value);
-  //if(emptyFieldError(value)){
-  //  return;
-  //}
+  if(emptyFieldError(value).length > 0){
+    return;
+  }
   minLengthError(value);
   maxLengthError(value);
   onlyNumbersLettersError(value);
@@ -116,6 +114,7 @@ function validateForm (e) {
 //
 //
 //////////////////////////////  local storage   //////////////////////////////////////
+//var localStorageIndex = localStorage.length + 1;
 //
 //function saveDatatoLocalStorage() {
 //	// get the data that you want to save
