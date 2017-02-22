@@ -33,7 +33,7 @@ function maxLengthError (value) {
 }
 
 function onlyLettersError (value) {
-  if (!/^[a-zA-Z]$/.test(value)) {
+  if (!/^[A-z]+$/.test(value)) {
     error = 'This field can have only letters';
     errors.push(error);
   }
@@ -42,7 +42,7 @@ function onlyLettersError (value) {
 }
 
 function onlyNumbersLettersError (value) {
-  if (!/^[a-zA-Z0-9]$/.test(value)) {
+  if (!/^[A-z0-9]+$/.test(value)) {
     error = 'This field can have only numbers and letters';
     errors.push(error);
   }
@@ -60,19 +60,19 @@ function nameValidation (value) {
   onlyLettersError(value);
 }
 
-//function descriptionValidation (value) {
-//  emptyFieldError(value);
-//  //if(emptyFieldError(value)){
-//  //  return;
-//  //}
-//  minLengthError(value);
-//  maxLengthError(value);
-//  onlyNumbersLettersError(value);
-//}
-//
-//function cityValidation (value) {
-//  emptyFieldError(value);
-//}
+function descriptionValidation (value) {
+  emptyFieldError(value);
+  //if(emptyFieldError(value)){
+  //  return;
+  //}
+  minLengthError(value);
+  maxLengthError(value);
+  onlyNumbersLettersError(value);
+}
+
+function cityValidation (value) {
+  emptyFieldError(value);
+}
 
 function handleErrors (errors) {
   //var onSuccessWindow = document.getElementsByClassName('on-success');
@@ -85,7 +85,6 @@ function handleErrors (errors) {
   } else {
     //add .error to matching field + append error text
     console.log (errors);
-    //document.querySelector('.letterToSantaForm').reset();
   }
 }
 
@@ -96,11 +95,10 @@ function validateForm (e) {
   var city = document.letterToSanta.city.value;
   var behavior = document.letterToSanta.goodVSnaughty.value;
   var description = document.letterToSanta.description.value;
-  var imageFile = document.letterToSanta.wishImage.value;
 
   nameValidation(name);
-  //cityValidation(city);
-  //descriptionValidation(description);
+  cityValidation(city);
+  descriptionValidation(description);
 
   handleErrors(errors);
 }

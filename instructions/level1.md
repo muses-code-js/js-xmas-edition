@@ -166,7 +166,7 @@ To validate our form we will need to follow next steps:
   To validate that our name will have only letters we can test our value as
   follows:
 
-  `var onlyLetters = /^[a-zA-Z]$/.test(value);`
+  `var onlyLetters = /^[A-z]+$/.test(value);`
 
   This test will return us boolean value (true or false), if it does match our
   pattern `onlyLetters` will be equal to `true`.
@@ -241,6 +241,13 @@ To validate our form we will need to follow next steps:
   
 6. Clean errors
 ===============
+
+  If you run form multiple times you will see that the array of our errors
+  is keep growing, to avoid that we can clean the errors. So every time we
+  submit form we start with an empty errors array.
+  
+  TODO: on the first line inside of `validateForm` function reset `error`
+  by making it equal to empty array.
 
 
 7. Do validation for other fields
