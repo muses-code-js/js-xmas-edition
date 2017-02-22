@@ -1,4 +1,7 @@
-/*  Level 2 - Local storage
+Level 2 - Local storage
+=======================
+
+
 After the user fills in the form and javascript validating
 
 1. Once the user enters the values, in case of success validation --
@@ -13,9 +16,8 @@ After the user fills in the form and javascript validating
 	1. Here too we would read from local storage
 	2. random number generator and display the image ..
 
-*/
 
-/*
+
 
 We are getting information from the user and validating that information but when we refresh the page, that information is lost and the user has to type in all the information again. Wouldn't it be nice if we could save the information that the user types somewhere and we could use that information to display something..
 
@@ -214,6 +216,3 @@ You can delete the properties of an object using the  'delete' keyword
 e.g :
 delete book.blurp // deletes the blurp property of book object
 
-
-
-*/

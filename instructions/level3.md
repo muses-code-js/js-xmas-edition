@@ -1,4 +1,7 @@
-/*  Ramdomize function -> to get a random no in a particular range
+Level 3. Ramdomize function
+===========================
+
+to get a random no in a particular range
 1. random function to use for good/bad/naughty
 2. random function to use for user key (gift)
 2. Display the Image (when we have the time) -->
@@ -14,10 +17,12 @@ Follow ups
 Additional Tasks
 1. Ajax calls (Flickr retrieval)
 
-/*
 
-Level 1 gets the information from the user, level 2 displays part of that information to the user as a list. Now lets
-get to the fun part of level 3.
+
+Level 1 gets the information from the user, 
+level 2 displays part of that information to the user as a list. 
+Now lets get to the fun part of level 3.
+
 The aim here is based on the user Inputs
 	- Determine if the user was Very Good, Good or Naughty
 	- Identify the gift the person asked for
@@ -105,6 +110,8 @@ in the Onload() event.
 Go on.. give it a try..
 if all the DOM elements are loaded simultaneously.. Then everything works fine..
 
+
+
 //////////////////////////////////////////////////////////////////////////////
 //                                                                         //
 // Congratulations! You have finished the intermediate Level !            //
@@ -113,4 +120,3 @@ if all the DOM elements are loaded simultaneously.. Then everything works fine..
 //                                                                     //
 ////////////////////////////////////////////////////////////////////////
 
-*/
