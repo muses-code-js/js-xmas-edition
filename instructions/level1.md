@@ -36,7 +36,8 @@ little or too much or from using invalid characters.
 
 For an alternative approach to client-side form validation, without
 JavaScript, check on HTML5 Form Validation which is available now in most
-modern browsers.
+modern browsers. But we cannot style it, that is why we are doing js validation
+in this workshop.
 https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation
 
 * Server-side validation:
@@ -82,7 +83,7 @@ To validate our form we will need to follow next steps:
 
    So let's get one value out to see how it works, for that you need to check on
    index.html file as well - to see how we are getting element out knowing classes:
-   var name = document.letterToSanta.myName.value;
+   `var name = document.letterToSanta.myName.value;`
 
    TODO: now it is your turn to get other values out. Create variables called
    `city`, `behavior`, `description` and store in them appropriate values from the form.
@@ -95,11 +96,11 @@ To validate our form we will need to follow next steps:
   Let's continue our example `name` and validate it.
   First of all let's validate that our `name` value is not empty:
 
-  function nameValidation (value) {
+  `function nameValidation (value) {
     if(value == '') {
       return 'This field cannot be empty';
     }
-  }
+  }`
 
   TODO: add inside of `nameValidation` function few more validations:
   - If name is shorter then 2 characters print error
@@ -124,12 +125,12 @@ To validate our form we will need to follow next steps:
   Now when we have this containers to keep pieces of information we can use
   them inside of our function `nameValidation`, to give them some values. As so:
 
-  function nameValidation (value) {
+  `function nameValidation (value) {
     if(value == '') {
       error = 'This field cannot be empty';
       errors.push(error);
     }
-  }
+  }`
 
   So with this changes we gave a value to variable `error` that is equal to
   'This field cannot be empty', and we pushed this `error` to the array of
@@ -150,22 +151,22 @@ To validate our form we will need to follow next steps:
 
   RegEx can get very complex, but we will deal with a simple patterns today.
   PS: check on regular-expressions.txt for more information about RegExp and
-  links to cheatsheet and interesting games(!!!) where you can practice your
+  links to cheat sheet and interesting games(!!!) where you can practice your
   new skill. Very recommended!
 
   Regular expression objects have a number of methods. The simplest one is
   `test`. If you pass it a string, it will return a Boolean telling you whether
   the string contains a match of the pattern in the expression.
 
-  console.log(/abc/.test("abcde"));
+  `console.log(/abc/.test("abcde"));
     // → true
   console.log(/abc/.test("abxde"));
-    // → false
+    // → false`
 
   To validate that our name will have only letters we can test our value as
   follows:
 
-  var onlyLetters = /^[a-zA-Z]$/.test(value);
+  `var onlyLetters = /^[a-zA-Z]$/.test(value);`
 
   This test will return us boolean value (true or false), if it does match our
   pattern `onlyLetters` will be equal to `true`.
@@ -199,14 +200,17 @@ To validate our form we will need to follow next steps:
   only from letters.
 
   If you try it now nothing will happen. And the reason for that is
-  so default behaviour of the submit button.
+  the default behaviour of the submit button.
   
   
 4. Events. Submit button.
 =========================
 
-
-   ......
+  The standard behaviour of the form on submit - all input will be send
+  to server and page will be reloaded - it was reasonable long time ago
+  when it was no single page application concept. Nowadays we creating 
+  single-page applications with javascript and we want to prevent that 
+  default behaviour.
 
   TODO: 1. At `index.html` page add `event` as an argument of the
   `validateForm` function.
@@ -220,15 +224,58 @@ To validate our form we will need to follow next steps:
   you all errors.
   
 
-5. 
+5. Display success or errors
+============================
+  
+  Let's create an error handler, that will be handling our errors
+  and if
+  
+  TODO: 1. Create function `handleErrors` that takes 1 argument `errors`
+  and if we have no errors console.log 'Success', else - console.log errors.
+  TODO: 2. Replace console.log errors in function `validateForm` with calling
+  on function `handleErrors` and pass in it `errors`.
+  
+  Run the form again and if name field is filled in correctly it should
+  print us 'Success', else any error or all errors that we get.
+  
+  
+6. Clean errors
+===============
+
+
+7. Do validation for other fields
+=================================
+
+  Now, when you know all steps on how to validate 1 field do same for other
+  fields.
+  
+  TODO: 1. Get value from field city and validate that it is not empty.
+  TODO: 2. Get value from field description and validate that it is not empty,
+  has more then 2 characters, less then 250 characters and consist only from
+  letters and numbers.
+  TODO: 3. Call on validation in `validateForm`.
+   
+  
+  Now three of your fields should be validating in a proper way.
+  
+  
+8. If field is empty do not do other checks
+============================================
+
+
+
+
+9. Refactoring/cleaning
+=======================
+
+
+
+ 
 
 
 
 
 /*
-5. Display success or errors
-6. Clean errors ????
-7. Do validation for all fields
 8. If field is empty do not do other checks
  function nameValidation (value) {
     if(emptyFieldError(value)){
