@@ -1,6 +1,7 @@
 # Letter to Santa
 
-JavaScript workshop (forms, inputs, validation, events, RegExp, ajax, local storage)
+JavaScript workshop (forms, inputs, validation, events, RegExp, objects, callbacks , 
+local storage, ajax)
 
 ## Slides
 

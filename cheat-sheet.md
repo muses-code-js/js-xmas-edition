@@ -43,6 +43,17 @@
 
 ##Bracket-notation: 
   uses the '[]' operator to access the properties of an object
+  
+##Callback:
+  A function that we pass inside of another function as an argument
+  Example:
+  ```
+  var a = ['a', 'b', 'c'];
+  
+  a.forEach(function(element) {
+      console.log(element);
+  });
+  ```
 
 ##Local storage: 
   function which allows the web pages to store information locally on to the 
@@ -71,3 +82,6 @@
   - Update a web page without reloading the page
   - Request/receive data from a server - after the page has loaded
   - Send data to a server - in the background
+  
+##Asynchronous JavaScript
+  Use callbacks to run functions asynchronously. 

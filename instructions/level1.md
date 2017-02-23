@@ -1,3 +1,7 @@
+Level 1 - Form
+==============
+
+
 How does a web form work?
 =========================
 
@@ -276,6 +280,8 @@ To validate our form we will need to follow next steps:
 
   As you can see now we have a lot of repetitions in `handleErrors`. Now, 
   when all code works, it is time to do some cleaning and refactor the code.
+  You can read more about `forEach` method here:
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
   
   TODO: 1. We can iterate through errors through the key and with function 
   forEach.
