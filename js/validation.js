@@ -1,102 +1,77 @@
-
 /////////////////////////////////  validation /////////////////////////
 
-var errors = [];
-var error = '';
-
-
-function emptyFieldError (value) {
-  if(value == '') {
-    error = 'This field cannot be empty';
-    errors.push(error);
+function nameValidation(value) {
+  if (value == '') {
+    return 'Name field cannot be empty';
   }
-
-  return errors;
-}
-
-function minLengthError (value){
-  if (value.length < 2){
-    error = 'This field should be longer then 1 character';
-    errors.push(error);
+  if (value.length < 2) {
+    return 'Name field should be longer then 1 character';
   }
-
-  return errors;
-}
-
-function maxLengthError (value) {
-  if (value.length > 250){
-    error ='This field cannot be longer then 250 characters';
-    errors.push(error);
+  if (value.length > 250) {
+    return 'This field cannot be longer then 250 characters';
   }
-
-  return errors;
-}
-
-function onlyLettersError (value) {
   if (!/^[A-z]+$/.test(value)) {
-    error = 'This field can have only letters';
-    errors.push(error);
+    return 'Name field can have only letters';
   }
-
-  return errors;
+  return '';
 }
 
-function onlyNumbersLettersError (value) {
+function descriptionValidation(value) {
+  if (value == '') {
+    return 'Description field cannot be empty';
+  }
+  if (value.length < 2) {
+    return 'Description field should be longer then 1 character';
+  }
+  if (value.length > 250) {
+    return 'Description field cannot be longer then 250 characters';
+  }
   if (!/^[A-z0-9]+$/.test(value)) {
-    error = 'This field can have only numbers and letters';
-    errors.push(error);
+    return 'Description field can have only numbers and letters';
   }
-
-  return errors;
+  return '';
 }
 
-function nameValidation (value) {
-  if(emptyFieldError(value).length > 0){
-    return;
+function cityValidation(value) {
+  if (value == '') {
+    return 'City field cannot be empty';
   }
-  minLengthError(value);
-  maxLengthError(value);
-  onlyLettersError(value);
+  return '';
 }
 
-function descriptionValidation (value) {
-  if(emptyFieldError(value).length > 0){
-    return;
-  }
-  minLengthError(value);
-  maxLengthError(value);
-  onlyNumbersLettersError(value);
-}
 
-function cityValidation (value) {
-  emptyFieldError(value);
-}
+function handleErrors(errors) {
+  let errorsCount = 0;
 
-function handleErrors (errors) {
+  Object.keys(errors)
+    .forEach(function (key) {
+      //document.querySelector(`.letterToSantaForm input[name="${key}"]`).classList.add('error');
+      //document.querySelector(`.letterToSantaForm errors.${key}`).innerHTML = errors.join('<br>');
+      console.log(errors[key]);
+      errorsCount = errorsCount + errors[key].length;
+    });
+
   //var onSuccessWindow = document.getElementsByClassName('on-success');
-  if (errors.length < 1){
+  if (errorsCount < 1) {
     console.log('Success');
     //onSuccessWindow[0].classList.remove('hiddenWindow');
     //saveDatatoLocalStorage();  //save data to localstorage
     //document.querySelector('.letterToSantaForm').reset(); //clean all fields
-
-  } else {
-    //add .error to matching field + append error text
-    console.log (errors);
   }
 }
 
-function validateForm (e) {
-  errors = [];
+function validateForm(e) {
   e.preventDefault();
   var name = document.letterToSanta.myName.value;
   var city = document.letterToSanta.city.value;
   var behavior = document.letterToSanta.goodVSnaughty.value;
   var description = document.letterToSanta.description.value;
 
-  nameValidation(name);
-  cityValidation(city);
-  descriptionValidation(description);
+  const errors = {
+    name: nameValidation(name),
+    city: cityValidation(city),
+    description: descriptionValidation(description)
+  };
 
   handleErrors(errors);
 }

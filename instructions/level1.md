@@ -96,49 +96,20 @@ To validate our form we will need to follow next steps:
   Let's continue our example `name` and validate it.
   First of all let's validate that our `name` value is not empty:
 
-  `function nameValidation (value) {
+  ```
+  function nameValidationError (value) {
     if(value == '') {
-      return 'This field cannot be empty';
+      return 'Name cannot be empty';
     }
-  }`
+    return '';
+  }
+  ```
 
-  TODO: add inside of `nameValidation` function few more validations:
+  TODO: add inside of `nameValidationError` function few more validations:
   - If name is shorter then 2 characters print error
   'This field should be longer then 1 character'
   - If name is longer then 250 characters print error
   'This field cannot be longer then 250 characters'
-
-
-  But there is one problem with this function - it will always give us
-  only one error. What if would have few errors same time?
-  (Not in this case of course).
-  It would be better to create a variable `error` for each single error
-  and a variable `errors` - an array that will keep a list of all errors.
-  PS: If you do not remember much about arrays and what methods you can
-  use to work with them you can read more here:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-
-  TODO: create an variable `error` that equal to empty string and an empty
-  array named `errors`.
-
-
-  Now when we have this containers to keep pieces of information we can use
-  them inside of our function `nameValidation`, to give them some values. As so:
-
-  `function nameValidation (value) {
-    if(value == '') {
-      error = 'This field cannot be empty';
-      errors.push(error);
-    }
-  }`
-
-  So with this changes we gave a value to variable `error` that is equal to
-  'This field cannot be empty', and we pushed this `error` to the array of
-  all our errors. If you console.log(errors) after running the function you
-  should see our error.
-
-  TODO: Do same to our minimum and maximum length validations. And in the end
-  of our function `nameValidation` we need to return `error`.
 
 
   Now it is time to do one more interesting validation. For example, we want
@@ -171,7 +142,7 @@ To validate our form we will need to follow next steps:
   This test will return us boolean value (true or false), if it does match our
   pattern `onlyLetters` will be equal to `true`.
 
-  TODO: Add one more validation to `nameValidation` function. That will validate
+  TODO: Add one more validation to `nameValidationError` function. That will validate
   that we have letters only, if not return us an error 'This field can have only
   letters'
   
@@ -189,13 +160,14 @@ To validate our form we will need to follow next steps:
   TODO: 1.So let's create function `validateForm`. It will not take
   any arguments.
   TODO: 2. Move variable `name` with it's value inside of the function.
-  TODO: 3. Call function `nameValidation` inside our `validateForm`
+  TODO: 3. Call function `nameValidationError` inside our `validateForm`
   function and pass `name` as an argument.
-  TODO: 4. console.log the `errors` so we can check if it works.
+  TODO: 4. console.log the `nameValidationError(name)` so we can check 
+  if it works.
 
   So, what happened now - when we click submit button we get the value
   of the name field (if there is any) and after we call function
-  `nameValidation` - that will validate if our name field is empty,
+  `nameValidationError` - that will validate if our name field is empty,
   will check if it's of an appropriate length and if our name consist
   only from letters.
 
@@ -231,26 +203,20 @@ To validate our form we will need to follow next steps:
   and if
   
   TODO: 1. Create function `handleErrors` that takes 1 argument `errors`
-  and if we have no errors console.log 'Success', else - console.log errors.
-  TODO: 2. Replace console.log errors in function `validateForm` with calling
-  on function `handleErrors` and pass in it `errors`.
+  TODO: 2. Make inside of this function check - if we have no errors 
+  then console.log 'Success', else - console.log errors.
+  TODO: 3. Replace console.log `nameValidationError(name)` in function 
+  `validateForm` with calling on function `handleErrors` and we need to pass
+   in the list of errors, to do so we need:
+  TODO: 4. Create variable `errors` inside function `validateForm` and 
+  make it equal to `nameValidationError(name)`.
+  TODO: 5. Pass variable `errors` to `handleErrors` function.
   
   Run the form again and if name field is filled in correctly it should
-  print us 'Success', else any error or all errors that we get.
-  
-  
-6. Clean errors
-===============
-
-  If you run form multiple times you will see that the array of our errors
-  is keep growing, to avoid that we can clean the errors. So every time we
-  submit form we start with an empty errors array.
-  
-  TODO: on the first line inside of `validateForm` function reset `error`
-  by making it equal to empty array.
+  print us 'Success', else one of the first errors we get.
 
 
-7. Do validation for other fields
+6. Do validation for other fields
 =================================
 
   Now, when you know all steps on how to validate 1 field do same for other
@@ -260,64 +226,77 @@ To validate our form we will need to follow next steps:
   TODO: 2. Get value from field description and validate that it is not empty,
   has more then 2 characters, less then 250 characters and consist only from
   letters and numbers.
-  TODO: 3. Call on validation in `validateForm`.
-   
+  TODO: 3. Now in `validateForm` how to get errors from city and description field.
+  For that we will have to change our variable `error`. It should be an
+  object now. First of all, for `nameValidationError(name)` - turn it into
+  key `name` and value `nameValidationError(name)` as so:
   
+  ```
+  var errors = {
+    name: nameValidation(name)
+  };
+  ```
+  TODO: 4. Now do same for city and description.
+   
+  Now we are passing all of our errors into `handleErrors` function, but now we
+  need to check if we have any errors differently. As we need iterate through 
+  each key-value pair.
+  
+  TODO: 5. Create variable `errorsCount` inside of `handleErrors` function.
+  TODO: 6. Now let's do check if we have any errors for name field and change
+  our `errorsCount` if we have any errors like so:
+  ```
+  if (errors.name) {
+    console.log(errors.name);
+    errorsCount = errorsCount + 1;
+  }
+  ```
+  If we do not have any errors and our name field validation returns empty string,
+  for `if` statement it will be `false` and we will not do any errors counts. If we
+  do have an error we will get in and count our errors.
+  TODO: 7. Inside of our function `handleErrors` we do not need if/else check now
+  to display Success or Errors. We can do `if` checking is our `errorsCount < 1`
+  console `Success`. As our error will be consoled by check of errors itself on step 6.
+  
+  Now if you have any mistakes in name field it should work proper.
+   
+  TODO: 8. Do same checks for city and description fields.
+   
   Now three of your fields should be validating in a proper way.
   
   
-8. Refactoring/cleaning
-=======================
+7. Object, forEach, callback
+=============================
 
-  As you can see now we have a lot of repetitions in our code. We are checking
-  for the same validations in some fields. Now, when all code works, it is
-  time to do some cleaning and refactor the code.
+  As you can see now we have a lot of repetitions in `handleErrors`. Now, when all
+  code works, it is time to do some cleaning and refactor the code.
   
-  TODO: 1. Let's subtract a check if field is empty to separate function
-  named `emptyFieldError`, which will take one argument `value`. Inside will do
-  the if check and in the end of the function return array of `errors`.
-  TODO: 2. Subtract check of minimum length of the field into function named
-  `minLengthError`, which will take one argument `value`. Inside it will do same
-  as previous one with it's own check.
-  TODO: 3. Do same for new function `maxLengthError`.
-  TODO: 4. Do same for new function `onlyLettersError`.
-  TODO: 5. Do same for new function `onlyNumbersLettersError`.
-  TODO: 6. Now, when we have those separate functions you can call on them inside
-  of `nameValidation`, `descriptionValidation` and `cityValidation`, depending
-  on what we were checking in which field.
+  TODO: 1. We can iterate through errors through the key and with function forEach.
+  ```
+  Object.keys(errors)
+    .forEach(function (key) {
+       console.log(errors[key]); 
+       errorsCount = errorsCount + errors[key].length;
+    });
+  ```
+  Replace all our `if` checks for errors inside of the `handleError` function with 
+  that code.
   
-  
-  Now when you submit form it all should work the same. And as you can see, now
-  we do not have that many repetitions in our code and it consist of smaller functions
-  that does some particular action.
+  Now when you submit form it all should work the same. We do not have that many 
+  repetitions in our code anymore.
 
 
-9. If field is empty do not do other checks
-===========================================
+8. A bit of errors interactivity
+================================
+  - make field red
+  - clean this field
+  - insert error text
 
 
-
- 
-
-
-
-
-/*
-9. If field is empty do not do other checks
- function nameValidation (value) {
-    if(emptyFieldError(value)){
-        return;
-    }
-    minLengthError(value);
-    maxLengthError(value);
-    onlyLettersError(value);
- }
-10. If errors change css + append errors messages into page
-11. If no errors redirect to wish list page
-- and save all values to local storage
-- clean the fields
- */
-
+9. A bit of on Success interactivity
+====================================
+  - add var onSuccessWindow
+  - add onSuccess class
 
 
 
