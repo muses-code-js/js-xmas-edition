@@ -65,7 +65,7 @@ To validate our form we will need to follow next steps:
     4. Validate whole form when we submit it
     5. Clean the code
     6. Css:
-        - change for unvalid field - red
+        - change for error field - red
         - warning messages
         
 
@@ -129,10 +129,12 @@ To validate our form we will need to follow next steps:
   `test`. If you pass it a string, it will return a Boolean telling you whether
   the string contains a match of the pattern in the expression.
 
-  `console.log(/abc/.test("abcde"));
+  ```
+  console.log(/abc/.test("abcde"));
     // → true
   console.log(/abc/.test("abxde"));
-    // → false`
+    // → false
+  ```
 
   To validate that our name will have only letters we can test our value as
   follows:
@@ -206,8 +208,8 @@ To validate our form we will need to follow next steps:
   TODO: 2. Make inside of this function check - if we have no errors 
   then console.log 'Success', else - console.log errors.
   TODO: 3. Replace console.log `nameValidationError(name)` in function 
-  `validateForm` with calling on function `handleErrors` and we need to pass
-   in the list of errors, to do so we need:
+  `validateForm` with calling on function `handleErrors` and we need to 
+  pass in the list of errors, to do so we need:
   TODO: 4. Create variable `errors` inside function `validateForm` and 
   make it equal to `nameValidationError(name)`.
   TODO: 5. Pass variable `errors` to `handleErrors` function.
@@ -219,44 +221,48 @@ To validate our form we will need to follow next steps:
 6. Do validation for other fields
 =================================
 
-  Now, when you know all steps on how to validate 1 field do same for other
-  fields.
+  Now, when you know all steps on how to validate 1 field do same for 
+  other fields.
   
   TODO: 1. Get value from field city and validate that it is not empty.
-  TODO: 2. Get value from field description and validate that it is not empty,
-  has more then 2 characters, less then 250 characters and consist only from
-  letters and numbers.
-  TODO: 3. Now in `validateForm` how to get errors from city and description field.
-  For that we will have to change our variable `error`. It should be an
-  object now. First of all, for `nameValidationError(name)` - turn it into
-  key `name` and value `nameValidationError(name)` as so:
+  TODO: 2. Get value from field description and validate that it is not 
+  empty, has more then 2 characters, less then 250 characters and consist 
+  only from letters and numbers.
+  TODO: 3. Now in `validateForm` how to get errors from city and description 
+  field. For that we will have to change our variable `error`. It should be 
+  an object now. First of all, for `nameValidationError(name)` - turn it 
+  into key `name` and value `nameValidationError(name)` as so:
   
   ```
   var errors = {
     name: nameValidation(name)
   };
   ```
+  
   TODO: 4. Now do same for city and description.
    
-  Now we are passing all of our errors into `handleErrors` function, but now we
-  need to check if we have any errors differently. As we need iterate through 
-  each key-value pair.
+  Now we are passing all of our errors into `handleErrors` function, but 
+  now we need to check if we have any errors differently. As we need iterate 
+  through each key-value pair.
   
   TODO: 5. Create variable `errorsCount` inside of `handleErrors` function.
   TODO: 6. Now let's do check if we have any errors for name field and change
   our `errorsCount` if we have any errors like so:
+  
   ```
   if (errors.name) {
     console.log(errors.name);
     errorsCount = errorsCount + 1;
   }
   ```
-  If we do not have any errors and our name field validation returns empty string,
-  for `if` statement it will be `false` and we will not do any errors counts. If we
-  do have an error we will get in and count our errors.
-  TODO: 7. Inside of our function `handleErrors` we do not need if/else check now
-  to display Success or Errors. We can do `if` checking is our `errorsCount < 1`
-  console `Success`. As our error will be consoled by check of errors itself on step 6.
+  
+  If we do not have any errors and our name field validation returns empty 
+  string, for `if` statement it will be `false` and we will not do any errors 
+  counts. If we do have an error we will get in and count our errors.
+  TODO: 7. Inside of our function `handleErrors` we do not need if/else check 
+  now to display Success or Errors. We can do `if` checking is our 
+  `errorsCount < 1` console `Success`. As our error will be consoled by check 
+  of errors itself on step 6.
   
   Now if you have any mistakes in name field it should work proper.
    
@@ -268,10 +274,12 @@ To validate our form we will need to follow next steps:
 7. Object, forEach, callback
 =============================
 
-  As you can see now we have a lot of repetitions in `handleErrors`. Now, when all
-  code works, it is time to do some cleaning and refactor the code.
+  As you can see now we have a lot of repetitions in `handleErrors`. Now, 
+  when all code works, it is time to do some cleaning and refactor the code.
   
-  TODO: 1. We can iterate through errors through the key and with function forEach.
+  TODO: 1. We can iterate through errors through the key and with function 
+  forEach.
+  
   ```
   Object.keys(errors)
     .forEach(function (key) {
@@ -279,8 +287,9 @@ To validate our form we will need to follow next steps:
        errorsCount = errorsCount + errors[key].length;
     });
   ```
-  Replace all our `if` checks for errors inside of the `handleError` function with 
-  that code.
+  
+  Replace all our `if` checks for errors inside of the `handleError` function 
+  with that code.
   
   Now when you submit form it all should work the same. We do not have that many 
   repetitions in our code anymore.
