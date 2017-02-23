@@ -17,7 +17,7 @@ After the user fills in the form and it pass all validation:
 	- Random number generator and display the image
 
 
-1. Loacl Storage
+1. Local Storage
 =================
 
   We are getting information from the user and validating that 
