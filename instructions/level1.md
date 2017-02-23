@@ -198,7 +198,7 @@ To validate our form we will need to follow next steps:
   you all errors.
   
 
-5. Display success or errors
+5. Success or errors
 ============================
   
   Let's create an error handler, that will be handling our errors
@@ -297,9 +297,46 @@ To validate our form we will need to follow next steps:
 
 8. A bit of errors interactivity
 ================================
-  - make field red
-  - clean this field
-  - insert error text
+
+  Let's add some interactivity to our user interface, because at the moment 
+  only we know about the errors that we can see in console.
+  
+  Let's make fields that has errors red. For that we have class `.error`
+  that we create for you in our `index.css` file. It only makes the border of the
+  field that has this class red. 
+  TODO: 1.We will need to use `querySelector` to target the element on the page. 
+  And all of it we can do inside our forEach loop. So we are targeting the whole 
+  form and then fields with specific name (that our key will represent 
+  `[name="${key}"]`).
+  TODO: 2.After we get our element on this element we need to add class `.error`.
+  For that purpose we will use `.classList.add('error')`
+  TODO: 3. Now you ll see that we get red fields every time, it is because every 
+  time we iterate through field it will add class `error`. to avoid it we need
+  to make a check if we do have any errors then get element from the page and
+  add the class.
+  
+  Now when we have an error your field that has it should turn red.
+  
+  
+  It is also not cool that even if you put the wrong input in your field you still 
+  need to delete it by yourself and type in something else. So let's clean the field
+  with en error. 
+  TODO: Right after we add class, get same element from the page and set it value to
+  empty string.
+  
+  Now when we have an error your field that has it should turn red and empty. The
+  correct fields will still has it's values inside.
+  
+  
+  And last step for errors - let's display them out to user.
+  TODO: Let's add our errors inside of the `errorsBlock` container that we have on
+  `index.html` page for you. If you check on it you will see that we have seperate
+  paragraphs for each error with the class same as our key. So you can target out 
+  `errorsBlock` and class with key value. You can add errors to them using 
+  `innerHTML` method.
+  
+  When you submit form you will get your errors out for the fields you made mistake in.
+  Feel free to polish css in any way you like.
 
 
 9. A bit of on Success interactivity
@@ -314,6 +351,6 @@ To validate our form we will need to follow next steps:
 //                                                                    //
 // Congratulations! You have finished Part 1!                         //
 // Stand up, stretch your legs, celebrate your achievement.           //
-// Next step will be following up the instructions in level2.js file. //
+// Next step will be following up the instructions in level2.md file. //
 //                                                                    //
 ////////////////////////////////////////////////////////////////////////

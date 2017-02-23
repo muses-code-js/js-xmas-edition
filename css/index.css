@@ -26,6 +26,14 @@ header{
 	border:1px solid red;
 }
 
+.errorsBlock {
+	position: absolute;
+	top: 28%;
+	right: 5%;
+	font-size: 20px;
+	background-color: white;
+}
+
 .hiddenWindow {
     display: none;
 }

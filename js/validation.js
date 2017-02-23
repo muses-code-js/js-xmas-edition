@@ -45,8 +45,11 @@ function handleErrors(errors) {
 
   Object.keys(errors)
     .forEach(function (key) {
-      //document.querySelector(`.letterToSantaForm input[name="${key}"]`).classList.add('error');
-      //document.querySelector(`.letterToSantaForm errors.${key}`).innerHTML = errors.join('<br>');
+      if (errors[key].length){
+        document.querySelector(`.letterToSantaForm [name="${key}"]`).classList.add('error');
+        document.querySelector(`.letterToSantaForm [name="${key}"]`).value = '';
+        document.querySelector(`.errorsBlock [class="${key}"]`).innerHTML = errors[key];
+      }
       console.log(errors[key]);
       errorsCount = errorsCount + errors[key].length;
     });
@@ -62,9 +65,8 @@ function handleErrors(errors) {
 
 function validateForm(e) {
   e.preventDefault();
-  var name = document.letterToSanta.myName.value;
+  var name = document.letterToSanta.name.value;
   var city = document.letterToSanta.city.value;
-  var behavior = document.letterToSanta.goodVSnaughty.value;
   var description = document.letterToSanta.description.value;
 
   const errors = {

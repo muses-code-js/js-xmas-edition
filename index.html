@@ -18,7 +18,7 @@
 	<section>
 	  <form enctype="multipart/form-data" method="post" name="letterToSanta" class="letterToSantaForm">
 	    <p>Dear Santa,</p>
-	    <p>My name is <input type="text" name="myName" class="name"> and I live
+	    <p>My name is <input type="text" name="name" class="name"> and I live
 	      in</p>
 	    <p>
 	      <select name="city">
@@ -48,6 +48,12 @@
 	    </p>
 	  </form>
 	</section>
+
+	<div class="errorsBlock">
+		<p class="name"></p>
+		<p class="city"></p>
+		<p class="description"></p>
+	</div>
 
 	<div class="on-success hiddenWindow">
 	  <h1>Your letter is sent to Santa</h1>
