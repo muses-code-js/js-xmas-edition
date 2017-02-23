@@ -337,13 +337,39 @@ To validate our form we will need to follow next steps:
   
   When you submit form you will get your errors out for the fields you made mistake in.
   Feel free to polish css in any way you like.
+  
+  TODO: we can remove `console.log(errors[key]);` from `handleErrors` function now,
+  as we have our errors displayed on the screen now.
+  PS: it is always good to clean up all `console.log` from your code if you
+  have any when you finish.
 
 
 9. A bit of on Success interactivity
 ====================================
-  - add var onSuccessWindow
-  - add onSuccess class
+  Time came to play around with what will happen on success. 
+  We created for you a block with class name `on-success`.
+  TODO: 1.Create a variable `onSuccessWindow` in your `handleErrors` function
+  and make it equal to element from the page with class `on-success`.
+  TODO: 2.When we have no errors and printing out `Success`, remove class 
+  `hiddenWindow` from `onSuccessWindow` using `classList` method. As we added
+   classes before to errors fields.
 
+   
+  Now you will see a pop up window if all fields are filled in correct. 
+  If you go to `index.html` page and look into `on-success` element you will
+  see that we have 2 buttons there with `onClick` event handlers and they both
+  have different functions. Let's create them so we can get on the next level!
+  TODO: 1.Create function `hideOnSuccessWindow` which will get our `on-success`
+  element out of the page and add class `hiddenWindow` to it.
+  TODO: 2.Create function `redirectToWishlist` which will redirect us to 
+  `wish-list.html` page. We can do it with help of `window.location.href`.
+   
+   
+  Everything works good now, just 1 more tiny thing - did you notice that when 
+  we choose to stay on this page and write another letter our form stays filled 
+  in? We can easily fix it by reseting the form when we have no errors.
+  TODO: Get our form element from the page and use `reset` method on it.
+  TODO: last step - you can delete `console.log('Success');` now.
 
 
 

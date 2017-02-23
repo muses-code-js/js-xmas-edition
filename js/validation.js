@@ -41,7 +41,8 @@ function cityValidation(value) {
 
 
 function handleErrors(errors) {
-  let errorsCount = 0;
+  var errorsCount = 0;
+  var onSuccessWindow = document.querySelector('.on-success');
 
   Object.keys(errors)
     .forEach(function (key) {
@@ -54,12 +55,11 @@ function handleErrors(errors) {
       errorsCount = errorsCount + errors[key].length;
     });
 
-  //var onSuccessWindow = document.getElementsByClassName('on-success');
   if (errorsCount < 1) {
     console.log('Success');
-    //onSuccessWindow[0].classList.remove('hiddenWindow');
+    onSuccessWindow.classList.remove('hiddenWindow');
     //saveDatatoLocalStorage();  //save data to localstorage
-    //document.querySelector('.letterToSantaForm').reset(); //clean all fields
+    document.querySelector('.letterToSantaForm').reset();
   }
 }
 
@@ -79,17 +79,18 @@ function validateForm(e) {
 }
 
 ////////////////////////// handle on-success window ////////////////////////////////////
-//
-//function hideOnSuccessWindow() {
-//  var onSuccessWindow = document.getElementsByClassName('on-success');
-//  onSuccessWindow[0].classList.add('hiddenWindow');
-//}
-//
-//function redirectToWishlist() {
-//  window.location.href = 'wish-list.html';
-//}
-//
-//
+
+
+function hideOnSuccessWindow() {
+  var onSuccessWindow = document.getElementsByClassName('on-success');
+  onSuccessWindow[0].classList.add('hiddenWindow');
+}
+
+function redirectToWishlist() {
+  window.location.href = 'wish-list.html';
+}
+
+
 //////////////////////////////  local storage   //////////////////////////////////////
 //var localStorageIndex = localStorage.length + 1;
 //
