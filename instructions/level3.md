@@ -63,8 +63,8 @@ Math.random
   
   ```
     var BehaviourList = {
-       1: 'Very Good'
-       2: 'Good'
+       1: 'Very Good',
+       2: 'Good',
        3: 'Naughty'
     }
   ```
@@ -82,86 +82,93 @@ Math.random
   the function in the `<body>` section of `result.html` page using the `onLoad` 
   event.
 
-Yuppiee, the imp is able to modify the behaviour of the user every time 
-the user refreshes the `result.html` page!!!
+  Yuppiee, the implementation is able to modify the behaviour of the user 
+  every time the user refreshes the `result.html` page!!!
 
-Now that we have done the behaviour bit and its kind of fun.. lets mess 
-with the gifts..
+  Now that we have done the behaviour bit and its kind of fun lets mess 
+  with the gifts..
 
-We would use the list of gifts description in the local storage (Hope 
-you haven't forgotten the local storage in level 2 !!) and use the similar 
-steps as above and get random gift.
+  We would use the list of gifts description in the local storage (Hope 
+  you haven't forgotten the local storage in level 2 !!) and use the similar 
+  steps as above and get random gift.
 
-Lets name the function as `getRandomGift()` and this would do the following
-	1. Get the random number using `getRandomNumber()` function. Note here the 
-	limit should be the no of gifts in local Storage, so we can use the 
-	`localStorageIndex` count.
-	P.S: Since we increment the `localStorgaeIndex` after adding new gift, 
-	the index value would be 1 count extra, so we need to use the limit as 
-	`localStorageIndex-1`
-	2. This random no can be used to get the gift description at that location 
-	(use the key as `user+'randonNo'`) in local storage
-	3. Display the `gift.description` name in DOM by using the query selector 
-	`.santa-gift-text`
+  TODO: Lets name the function as `getRandomGift()` and this would do the 
+  following:
+   1. Get the random number using `getRandomNumber()` function. Note here the 
+   limit should be the number of gifts in local storage, so we can use the 
+   `localStorageIndex` count.
+   P.S: Since we increment the `localStorgaeIndex` after adding new gift, 
+   the index value would be 1 count extra, so we need to use the limit as 
+   `localStorageIndex-1`
+   2. This random number can be used to get the gift description at that location 
+   (use the key as `user+'randonmNo'`) in local storage.
+   3. Display the `gift.description` name in DOM by using the query selector 
+   `.santa-gift-text`.
 
-Lets check if this works correctly by calling the function in the `<body>` 
-section of `result.html` page using the `onLoad` event
+  TODO: Lets check if this works correctly by calling the function in the 
+  `<body>` section of `result.html` page using the `onLoad` event.
 
-Just displaying the behaviour and gift description is boring, so lets play 
-with some images..
-We have some images of gifts in the img/gifts folder. we would randomly display 
-one of those images and display them in the `result.html` page
+  Just displaying the behaviour and gift description is boring, so lets play 
+  with some images.
 
-Lets create an object called `ImageUrlList` which would contain the key as 
-numbers and the value as the imageurl with names
-e.g :
-```
-var imageUrlList = {
-	1: 'img/gifts/goldGift.jpg',
-	2: 'img/gifts/groupGift.jpeg',
-	3: 'img/gifts/redGift.jpg'
-}
-```
-Here again we are using numbers as key so that it would be easy to use the 
-`randomNummber` Generator to get the images..
+  We have some images of gifts in the img/gifts folder. we would randomly display 
+  one of those images and display them in the `result.html` page
 
-After that, lets create a function called `getGiftImage()`. This would
-1. get the random number( depending on the number of images in the folder, 
-for now its 3)
-if you add more images, you can increment the limit accordingly.
-2. get the image url using the random no from the imageUrlList i.e 
-`imageUrlList[randomNumber]`
-3. setting the url as the source of the DOM element `.santa-gift` in 
-`result.html`
-```
-function getGiftImage() {
-	var element = document.querySelector('.santa-gift');
-	var randomNo = getRandomNumber(3);
-	var giftImageUrl = imageUrlList[randomNo];
-	element.src = giftImageUrl;
-}
-```
-You can check the function, by calling it in the `onLoad` event in the `<body>` 
-section.
+  TODO: Lets create an object called `ImageUrlList` which would contain the 
+  key as numbers and the value as the imageUrl with names:
+  
+  ```
+     var imageUrlList = {
+        1: 'img/gifts/goldGift.jpg',
+        2: 'img/gifts/groupGift.jpeg',
+        3: 'img/gifts/redGift.jpg'
+     };
+  ```
+  
+  Here again we are using numbers as key so that it would be easy to use the 
+  `randomNumber` generator to get the images.
 
-Now the final Bit, We have 3 functions, but we call each one individually in 
-the DOM using the `onLoad()` event.
-It would be really nice if we could call all the three functions when the page 
-loads..
-How we can achieve it ??
-One such way is to call all the three functions inside another function say 
-`fillContent()` and then just call the `fillContent()` method in the `Onload()` 
-event.
-Go on.. give it a try..
-If all the DOM elements are loaded simultaneously.. Then everything works fine..
+  TODO: After that, lets create a function called `getGiftImage()`. This should:
+   1. Get the random number (depending on the number of images in the folder, 
+   for now its 3) if you add more images, you can increment the limit accordingly.
+   2. Get the image url using the random number from the `imageUrlList` i.e 
+   `imageUrlList[randomNumber]`.
+   3. Set the url as the source of the DOM element `.santa-gift` in `result.html`
+   
+  ```
+     function getGiftImage() {
+        var element = document.querySelector('.santa-gift');
+        var randomNo = getRandomNumber(3);
+        var giftImageUrl = imageUrlList[randomNo];
+        element.src = giftImageUrl;
+     };
+  ```
+  
+  You can check the function, by calling it in the `onLoad` event in the `<body>` 
+  section.
+
+  Now the final Bit, We have 3 functions, but we call each one individually in 
+  the DOM using the `onLoad()` event.
+  
+  It would be really nice if we could call all the three functions when the page 
+  loads. How we can achieve it?
+
+  One way is to call all the three functions inside another function say 
+  `fillContent()` and then just call the `fillContent()` method in the `Onload()` 
+  event.
+  
+  Go on.. give it a try..
+  If all the DOM elements are loaded simultaneously.. Then everything works fine..
 
 
 
-//////////////////////////////////////////////////////////////////////////////
-//                                                                         //
-// Congratulations! You have finished the intermediate Level !            //
-// Celebrate your achievement !!                                         //
-// You could try the extra steps if you want to try more stuffs         //
-//                                                                     //
-////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+  Congratulations! You have finished the intermediate Level !
+  
+  Celebrate your achievement !!
+  
+  You could try the extra steps if you want to try more stuffs
+
+/////////////////////////////////////////////////////////////////////////////////
 

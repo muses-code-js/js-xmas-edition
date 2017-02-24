@@ -124,48 +124,48 @@ function displayWishes() {
 }
 
 ///////////////////////////////////  Random number generation  /////////////////////////
-//
-//var behaviorList = {
-//	1: 'Very Good',
-//	2: 'Good',
-//	3: 'Naughty'
-//};
-//
-//var imageUrlList = {
-//	1: 'img/gifts/goldGift.jpg',
-//	2: 'img/gifts/groupGift.jpeg',
-//	3: 'img/gifts/redGift.jpg'
-//};
-//
-//function getRandomNumber(limit) {
-//	var randomNumber = Math.floor(Math.random() * limit) + 1;
-//	return randomNumber;
-//}
-//
-//function getBehaviour() {
-//	var randomNo = getRandomNumber(3);
-//	var behaviour = behaviorList[randomNo];
-//	var element = document.querySelector('.attitude');
-//	element.appendChild(document.createTextNode(behaviour));
-//}
-//
-//function getGift() {
-//	var randomNo = getRandomNumber(localStorageIndex-1);
-//	var userKey = 'user' + randomNo;
-//	var data = JSON.parse(localStorage.getItem(userKey));
-//	var element = document.querySelector('.santa-gift-text');
-//	element.appendChild(document.createTextNode(data.giftDescription));
-//}
-//
-//function getGiftImage() {
-//	var element = document.querySelector('.santa-gift');
-//	var randomNo = getRandomNumber(3);
-//	var giftImageUrl = imageUrlList[randomNo];
-//	element.src = giftImageUrl;
-//}
-//
-//function fillContent() {
-//	getBehaviour();
-//	getGift();
-//	getGiftImage();
-//}
+
+var behaviorList = {
+  1: 'Very Good',
+  2: 'Good',
+  3: 'Naughty'
+};
+
+var imageUrlList = {
+  1: 'img/gifts/goldGift.jpg',
+  2: 'img/gifts/groupGift.jpeg',
+  3: 'img/gifts/redGift.jpg'
+};
+
+function getRandomNumber(limit) {
+  var randomNumber = Math.floor(Math.random() * limit) + 1;
+  return randomNumber;
+}
+
+function getBehaviour() {
+  var randomNo = getRandomNumber(3);
+  var behaviour = behaviorList[randomNo];
+  var element = document.querySelector('.attitude');
+  element.appendChild(document.createTextNode(behaviour));
+}
+
+function getGift() {
+  var randomNo = getRandomNumber(localStorageIndex - 1);
+  var userKey = 'user' + randomNo;
+  var data = JSON.parse(localStorage.getItem(userKey));
+  var element = document.querySelector('.santa-gift-text');
+  element.appendChild(document.createTextNode(data.giftDescription));
+}
+
+function getGiftImage() {
+  var element = document.querySelector('.santa-gift');
+  var randomNo = getRandomNumber(3);
+  var giftImageUrl = imageUrlList[randomNo];
+  element.src = giftImageUrl;
+}
+
+function fillContent() {
+  getBehaviour();
+  getGift();
+  getGiftImage();
+}
