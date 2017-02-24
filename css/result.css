@@ -1,7 +1,7 @@
 .gift-section {
-    width: 500px;
-    height: 500px;
-    margin: 50px auto;
+    width: 31em;
+    height: 31em;
+    margin: 3em auto;
     text-align: center;
 }
 
@@ -13,27 +13,50 @@
 .santa {
     position: absolute;
     right: 3%;
-    top: 45%;
+    bottom: 15%;
 }
 
 .santa img{
-    max-width: 400px;
-}
-
-header p:first-of-type img {
-    height: 190px;
-    width: 130px;
-    position: absolute;
-    top: -1%;
-    left: 120%;
-}
-
-header p:first-of-type img:hover {
-    height: 210px;
-    width: 150px;
+    max-width: 350px;
 }
 
 .santa-gift-text {
 	color: red;
 	font-style: italic;
 }
+
+@media all and (max-width: 1000px){
+	.gift-section {
+		margin: 3em 4em;
+	}
+
+	.santa img{
+    	max-width: 300px;
+	}
+}
+
+
+@media all and (max-width: 800px){
+	.gift-section {
+		width: 27em;
+		height: 28em;
+		margin: 3em;
+	}
+
+	.santa img{
+    	max-width: 250px;
+	}
+}
+
+@media all and (max-width: 620px){
+	.gift-section {
+		width: 25em;
+		height: 28em;
+		margin: 2em;
+	}
+
+	.santa img{
+    	max-width: 200px;
+	}
+}
+

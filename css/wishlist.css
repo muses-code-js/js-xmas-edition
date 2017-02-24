@@ -2,28 +2,15 @@
 	width: 500px;
 	height: 400px;
 	margin: 0 auto;
-	border: 1px solid black;
+	padding-top: 1em;
 }
 
-a img {
-	height: 150px;
-	width: 150px;
+.side-image-container {
 	position: absolute;
-	top: -1%;
-	left: 120%;
+	right: -14%;
+	top: 55%;
 }
 
-a img:hover {
-	height: 170px;
-	width: 170px;
-}
-
-header p:first-of-type img {
-	height: 190px;
-	width: 130px;
-}
-
-header p:first-of-type img:hover {
-	height: 210px;
-	width: 150px;
+.side-image-container img {
+	max-width:60%;
 }

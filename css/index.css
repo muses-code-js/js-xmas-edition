@@ -1,15 +1,3 @@
-header{
-	display: flex;
-	flex-wrap: wrap;
-	flex-flow: space-between;
-	justify-content: space-between;
-}
-
-.wishlist-container, .result-container {
-	flex: 0;
-	padding-top: 1%;
-}
-
 .on-success {
     position: absolute;
     top: 45%;
@@ -46,24 +34,15 @@ header{
 
 a img {
 	position: absolute;
-	height: 8em;
-	width: 8em;
+	height: 4em;
+	width: 4em;
 	top: 4%;
 }
 
 a img:hover {
-    height: 10em;
-    width: 10.5em;
+    height: 5em;
+    width: 5em;
 }
-
-#right-image {
-	right:2%;
-}
-
-#left-image {
-	left:2%;
-}
-
 
 section{
 	 background: url(../img/letter-frame.png) no-repeat center center;
@@ -89,20 +68,19 @@ form {
 
 @media all and (max-width: 640px){
 	form {
-		width: 19em;
-		font-size: 0.75em;
+		width: 21em;
+		font-size: 1em;
 	}
 	input[type=text], textarea {
-        width:80%;
+        width:50%;
     }
     a img {
-		height: 5em;
-		width: 5em;
+		height: 3em;
+		width: 3em;
 	}
 
-a img:hover {
-    height: 7em;
-    width: 8.5em;
-}
-
+	a img:hover {
+   	 	height: 4em;
+    	width: 4em;
+	}
 }

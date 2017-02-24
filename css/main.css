@@ -10,6 +10,7 @@ a {
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
+    padding: 10px 15px;
 }
 
 header, footer {
@@ -18,6 +19,30 @@ header, footer {
     flex: 0 1 auto;
     background-color: red;
     color: white;
+}
+
+.left-image-container, .right-image-container {
+	flex: 0;
+	padding-top: 1%;
+}
+
+header{
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: space-between;
+	justify-content: space-between;
+}
+
+a img {
+	position: absolute;
+	height: 4em;
+	width: 4em;
+	top: 4%;
+}
+
+a img:hover {
+    height: 5em;
+    width: 5em;
 }
 
 section {
@@ -59,4 +84,12 @@ footer a:hover {
 
 .float-right {
     float: right;
+}
+
+#right-image {
+	right:2%;
+}
+
+#left-image {
+	left:2%;
 }
