@@ -97,6 +97,10 @@ footer{
     text-decoration: none;
     font-size: 0.9rem;
     padding: 0 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer > ul {
