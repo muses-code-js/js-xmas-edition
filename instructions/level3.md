@@ -101,7 +101,7 @@ Math.random
    the index value would be 1 count extra, so we need to use the limit as 
    `localStorageIndex-1`
    2. This random number can be used to get the gift description at that location 
-   (use the key as `user+'randonmNo'`) in local storage.
+   (use the key as `user + 'randonmNo'`) in local storage.
    3. Display the `gift.description` name in DOM by using the query selector 
    `.santa-gift-text`.
 

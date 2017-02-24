@@ -182,7 +182,7 @@ Level 2 - Local storage
   `localstorage.length`.
   The loop must do few things:
    - create an element `li`.
-   - get the data from localstorage for that `userKey` and append it to `li`.
+   - get the data from local storage for that `userKey` and append it to `li`.
      e.g: `li.appendChild(document.createTextNode(data.giftDescription));`
    - this `li` element must be appended to the `ul` element
      e.g: `ul.appendChild(li);`
@@ -191,6 +191,7 @@ Level 2 - Local storage
 
   We have a function, that would display the list of wishes, but when do we 
   call this function?
+  
   As soon as the `wish-list.html` loads, we need all the elements to be 
   displayed. So we call the function `displayWishes()` when the DOM is loading 
   i.e on the `onload` event.
