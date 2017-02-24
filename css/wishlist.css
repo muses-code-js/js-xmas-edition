@@ -1,8 +1,10 @@
 .wish-list-container{
-	width: 500px;
-	height: 400px;
+	width: 40em;
+	height: 30em;
+	padding: 3em;
 	margin: 0 auto;
-	padding-top: 1em;
+	background-color: #efefef;
+	z-index: 2;
 }
 
 .side-image-container {

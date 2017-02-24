@@ -2,11 +2,18 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
+    background: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 32px;
 }
 
 a {
+    font-family: "Montserrat", sans-serif;
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
@@ -17,7 +24,7 @@ header, footer {
     min-height: 80px;
     box-sizing: border-box;
     flex: 0 1 auto;
-    background-color: red;
+    background-color: black;
     color: white;
 }
 
@@ -26,31 +33,63 @@ header, footer {
 	padding-top: 1%;
 }
 
-header {
+header{
+    width: 100%;
 	display: flex;
-	flex-wrap: wrap;
-	flex-flow: space-between;
+	flex-flow: row wrap;
 	justify-content: space-between;
+    align-items: center;
 }
 
-a img {
-	position: absolute;
-	height: 4em;
-	width: 4em;
-	top: 4%;
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+    align-items: center;
 }
-
-a img:hover {
-    height: 5em;
-    width: 5em;
+header h1 {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+header a {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5em;
+    background: black;
+}
+header a:hover {
+    color: black;
+    border: 2px solid #CFBD6F;
+    background: #CFBD6F;
+    transition: all 0.3s ease-in-out;
 }
 
 section {
-    box-sizing: border-box;
-    flex: 2 auto;
+    flex: 1 auto;
+	min-height: 56.5em;
     min-width: 450px;
-    background-color: #DBDFBB;
     min-height: 600px;
+	padding: 4em 0;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
+	background: url('../img/confetis.svg') no-repeat center center;
+}
+
+.gift_top{
+	z-index: 3;
+	margin-bottom: -50px;
+}
+.gift_bottom{
+	z-index: 1;
+	margin-top: -20px;
 }
 
 footer{
@@ -70,12 +109,11 @@ footer li {
 }
 
 footer a {
-    color: #DBDFBB;
-    font-style: italic;
+    color: #CFBD6F;
 }
 
 footer a:hover {
-    color: #000000;
+    color: white;
 }
 
 .float-left {

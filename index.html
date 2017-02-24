@@ -1,82 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1"charset="UTF-8">
-	<title>Letter to Santa</title>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" charset="UTF-8">
+  <title>Letter to Santa</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
+
 	<header>
-		<div class="left-image-container">
-			<a href="wish-list.html"> Your Wish List <img src="img/wishlist.gif" alt="wishlist" id="left-image"></a>
-		</div>
-		<div class="right-image-container">
-			<a href="result.html">Your Gift <img src="img/present-box.png" alt="results" id="right-image"></a>
-		</div>
+		<ul>
+			<li><a href="wish-list.html">Your Wish List</a></li>
+			<li><h1>Letter to Santa</h1></li>
+			<li><a href="result.html">Your Gift </a></li>
+		</ul>
 	</header>
 
 	<section>
-		<form enctype="multipart/form-data" method="post" name="letterToSanta" class="letterToSantaForm">
-		<p>Dear Santa,</p>
-		<p>My name is <input type="text" name="name" class="name"> and I live in</p>
-		<p>
-			<select name="city">
-				<option value=""></option>
-				<option value="adelaide">Adelaide</option>
-				<option value="brisbane">Brisbane</option>
-				<option value="cairns">Cairns</option>
-				<option value="darwin">Darwin</option>
-				<option value="melbourne">Melbourne</option>
-				<option value="perth">Perth</option>
-				<option value="sydney">Sydney</option>
-			</select>.
-			I think this year I have been
-		</p>
-		<p>
-			<input type="radio" value="veryGood" name="goodVSnaughty"> Very Good
-			<input type="radio" value="good" name="goodVSnaughty"> Good
-			<input type="radio" value="naughty" name="goodVSnaughty" checked> A little  Naughty.
-		</p>
-		<p>I would really like to receive
-			<textarea name="description" rows="2" cols="45"></textarea>
-			this Christmas.
-		</p>
-		<p>Upload image <input type="file" name="wishImage" onchange="uploadFile()"></p>
-		<p>
-			<button name="submit" onclick="validateForm(event)">
-				Send your letter to Santa
-			</button>
-		</p>
-		</form>
+		<img src="img/gift_top.svg" class="gift_top">
+	  <form enctype="multipart/form-data" method="post" name="letterToSanta" class="letterToSantaForm">
+	    <p>Dear Santa,</p>
+	    <p>My name is <input type="text" name="name" class="name"> and I live in
+	      <select name="city">
+	        <option value=""></option>
+	        <option value="adelaide">Adelaide</option>
+	        <option value="brisbane">Brisbane</option>
+	        <option value="cairns">Cairns</option>
+	        <option value="darwin">Darwin</option>
+	        <option value="melbourne">Melbourne</option>
+	        <option value="perth">Perth</option>
+	        <option value="sydney">Sydney</option>
+	      </select>.</p>
+				<div class="errorsBlock">
+					<span class="name"></span>
+					<span class="city"></span>
+				</div>
+			<p> I think this year I have been 
+	       <input type="radio" value="veryGood" name="goodVSnaughty"> Very Good
+	       <input type="radio" value="good" name="goodVSnaughty"> Good
+	       <input type="radio" value="naughty" name="goodVSnaughty" checked> A little  Naughty. </p>
+	    <p>This Christmas, I would really like to receive </p>
+	    <p>
+	      <textarea name="description" rows="4" cols="45"></textarea>
+	    </p>
+			<div class="errorsBlock">
+				<span class="description"></span>
+			</div>
+	    <p>Upload image <input type="file" name="wishImage" onchange="uploadFile()"></p>
+	    <p>
+	      <button name="submit" onclick="validateForm(event)">
+	        Send your letter
+	      </button>
+	    </p>
+	  </form>
+
+		<img src="img/gift_box.svg" class="gift_bottom">
 	</section>
 
-	<div class="errorsBlock">
-		<p class="name"></p>
-		<p class="city"></p>
-		<p class="description"></p>
-	</div>
 
 	<div class="on-success hiddenWindow">
-		<h1>Your letter is sent to Santa</h1>
-		<button onclick="hideOnSuccessWindow()">Write another letter</button>
-		<button onclick="redirectToWishlist()">See all your wishes</button>
+		<div>
+			<h1>Your letter is sent to Santa</h1>
+			<button onclick="hideOnSuccessWindow()">Write another letter</button>
+			<button onclick="redirectToWishlist()">See all your wishes</button>
+		</div>
 	</div>
 
 	<footer>
-		<ul class="float-left">
-			<li>Twitter:
-				<a href="https://twitter.com/NodeGirlsSydney">@NodeGirlsSydney</a>
-				<a href="https://twitter.com/NodeGirlsMelb">@NodeGirlsMelb</a>
-			</li>
-			<li>Facebook:
-				<a href="https://www.facebook.com/NodeGirlsAustralia">NodeGirlsAustralia</a>
-			</li>
-		</ul>
-		<ul class="float-right">
-			<li>Website: <a href="http://nodegirls.com.au">http://nodegirls.com.au</a></li>
-			<li>e-mail: <a href="mailto:info@nodegirls.com.au">info@nodegirls.com.au</a></li>
-		</ul>
+	  <ul class="float-left">
+	    <li>
+	      <a href="https://twitter.com/NodeGirlsSydney">@NodeGirlsSydney</a>
+	      <a href="https://twitter.com/NodeGirlsMelb">@NodeGirlsMelb</a>
+	    </li>
+	    <li>
+	      <a href="https://www.facebook.com/NodeGirlsAustralia">NodeGirlsAustralia</a>
+	    </li>
+	    </ul>
+	  <ul class="float-right">
+	    <li><a href="http://nodegirls.com.au">http://nodegirls.com.au</a></li>
+	    <li><a href="mailto:info@nodegirls.com.au">info@nodegirls.com.au</a></li>
+	  </ul>
 	</footer>
 
 <script src="js/main.js"></script>

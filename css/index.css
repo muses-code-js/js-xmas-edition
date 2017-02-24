@@ -1,25 +1,40 @@
 .on-success {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.2);
+	overflow: hidden;
+	z-index: 98;
+}
+.on-success div{
     position: absolute;
-    top: 45%;
-    left: 35%;
-    width: 35%;
-    height: 150px;
-    border: 1px solid black;
-    border-radius: 5%;
-    background: white;
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 40vh;
+    border-radius: 2em;
     text-align: center;
+    background: #333333;
+	z-index: 99;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	justify-content: center;
 }
 
+.on-success div h1 {
+	color: white;
+}
 .error {
-	border:1px solid red;
+	border:2px solid red;
 }
 
 .errorsBlock {
-	position: absolute;
-	top: 28%;
-	right: 5%;
-	font-size: 20px;
-	background-color: white;
+	font-size: 14px;
+	color: red;
 }
 
 .hiddenWindow {
@@ -44,26 +59,62 @@ a img:hover {
     width: 5em;
 }
 
-section{
-	 background: url(../img/letter-frame.png) no-repeat center center;
-	 -webkit-background-size: contain;
-	 -moz-background-size: contain;
-	 -o-background-size: contain;
-	 background-size: contain;
-	 background-color: #DBDFBB;
-	 min-height: 56.5em;
-	 display: flex;
-	 flex-direction: column;
-	 flex-wrap: wrap;
-	 align-items: center;
-	 justify-content: center;
-}
-
 form {
-	width: 22em;
+	background-color: #efefef;
+	width: 40em;
 	flex: 0;
-	padding-bottom: 15em;
+	padding: 3em 5em;
 	text-align: center;
+	z-index: 2;
+}
+input {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background: inherit;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 0.5em;
+}
+select {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background: inherit;
+	border: 2px solid black;
+}
+textarea {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background: inherit;
+	border: 2px solid black;
+}
+input[type='file']{
+	width: 60%;
+	border:none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1em 2em;
+}
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 1em 2em;
+	margin: 1em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2em;
+    background: #20D7C0;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+button:hover{
+    background: black;
+    color: #20D7C0;
 }
 
 @media all and (max-width: 640px){

@@ -1,8 +1,11 @@
 .gift-section {
-    width: 31em;
+	width: 40em;
     height: 31em;
-    margin: 3em auto;
+	padding: 3em;
+    margin: 0 auto;
+	background-color: #efefef;
     text-align: center;
+	z-index: 2;
 }
 
 .santa-gift {
