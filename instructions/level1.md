@@ -325,10 +325,10 @@ To validate our form we will need to follow next steps:
   
   
   It is also not cool that even if you put the wrong input in your field you still 
-  need to delete it by yourself and type in something else. So let's clean the field
-  with en error. 
-  TODO: Right after we add class, get same element from the page and set it value to
-  empty string.
+  need to delete it by yourself and type in something else. So let's clean the 
+  field with en error. 
+  TODO: Right after we add class, get same element from the page and set it value 
+  to empty string.
   
   Now when we have an error your field that has it should turn red and empty. The
   correct fields will still has it's values inside.
@@ -373,7 +373,7 @@ To validate our form we will need to follow next steps:
    
   Everything works good now, just 1 more tiny thing - did you notice that when 
   we choose to stay on this page and write another letter our form stays filled 
-  in? We can easily fix it by reseting the form when we have no errors.
+  in? We can easily fix it by resetting the form when we have no errors.
   TODO: Get our form element from the page and use `reset` method on it.
   TODO: last step - you can delete `console.log('Success');` now.
 

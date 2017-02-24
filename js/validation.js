@@ -58,7 +58,7 @@ function handleErrors(errors) {
   if (errorsCount < 1) {
     console.log('Success');
     onSuccessWindow.classList.remove('hiddenWindow');
-    //saveDatatoLocalStorage();  //save data to localstorage
+    //saveDataToLocalStorage();  //save data to localstorage
     document.querySelector('.letterToSantaForm').reset();
   }
 }
@@ -92,35 +92,37 @@ function redirectToWishlist() {
 
 
 //////////////////////////////  local storage   //////////////////////////////////////
-//var localStorageIndex = localStorage.length + 1;
-//
-//function saveDatatoLocalStorage() {
-//	// get the data that you want to save
-//	var name = document.letterToSanta.myName.value;
-//	var description = document.letterToSanta.description.value;
-//	var key = 'user'+ localStorageIndex; // setting a unique key for the data
-//
-//	// saving the data as an object
-//	localStorage.setItem(key, JSON.stringify({
-//    username: name,
-//    giftDescription: description
-//	}));
-//
-//	localStorageIndex++; // incrementing the index counter
-//}
-//
-//function displayWishes() {
-//	var ul = document.querySelector('.wish-list');
-//	var li, userKey;
-//	for(var i=1; i<=localStorage.length; i++) {
-//		li = document.createElement('li');
-//		userKey = 'user' + i;
-//		var data = JSON.parse(localStorage.getItem(userKey));
-//		li.appendChild(document.createTextNode(data.giftDescription));
-//		ul.appendChild(li);
-//	}
-//}
-//
+var localStorageIndex = localStorage.length + 1;
+
+function saveDataToLocalStorage() {
+  // get the data that you want to save
+  var name = document.letterToSanta.name.value;
+  var description = document.letterToSanta.description.value;
+  var key = 'user'+ localStorageIndex; // setting a unique key for the data
+
+  // saving the data as an object
+  localStorage.setItem(key, JSON.stringify({
+    username: name,
+    giftDescription: description
+  }));
+
+  localStorageIndex = localStorageIndex + 1;
+}
+
+function displayWishes() {
+  var ul = document.querySelector('.wish-list');
+  var li, userKey;
+
+  for(var i = 1; i <= localStorage.length; i = i + 1) {
+    li = document.createElement('li');
+    userKey = 'user' + i;
+    var data = JSON.parse(localStorage.getItem(userKey));
+
+    li.appendChild(document.createTextNode(data.giftDescription));
+    ul.appendChild(li);
+  }
+}
+
 ///////////////////////////////////  Random number generation  /////////////////////////
 //
 //var behaviorList = {
