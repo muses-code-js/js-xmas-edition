@@ -74,7 +74,7 @@ To validate our form we will need to follow next steps:
         
 
 
-1. Get value from the form.
+1.Get value from the form.
 ===========================
 
 
@@ -93,7 +93,7 @@ To validate our form we will need to follow next steps:
    `city`, `behavior`, `description` and store in them appropriate values from the form.
    
    
-2. Validate one value to be right.
+2.Validate one value to be right.
 ==================================
 
 
@@ -148,28 +148,30 @@ To validate our form we will need to follow next steps:
   This test will return us boolean value (true or false), if it does match our
   pattern `onlyLetters` will be equal to `true`.
 
-  TODO: Add one more validation to `nameValidationError` function. That will validate
-  that we have letters only, if not return us an error 'This field can have only
-  letters'
+  TODO: Add one more validation to `nameValidationError` function. That will 
+  validate that we have letters only, if not return us an error 'This field 
+  can have only letters'.
   
 
-3. Submitting the form.
+3.Submitting the form.
 ========================
   
   
-  Now, when we have full validation on name field let's check
-  up how it works when we submit the form. If you go to the
-  `index.html` file and check on the form, on the bottom, where
-  we have submit button `Send your letter to Santa` you can see
-  that `onclick` we call function `validateForm`.
+  Now, when we have full validation on name field let's check up how it works 
+  when we submit the form. If you go to the `index.html` file and check on 
+  the form, on the bottom, where we have submit button `Send your letter to 
+  Santa` you can see that `onclick` we call function `validateForm`.
 
-  TODO: 1.So let's create function `validateForm`. It will not take
-  any arguments.
+  TODO: 1.So let's create function `validateForm`. It will not take any 
+  arguments.
+  
   TODO: 2. Move variable `name` with it's value inside of the function.
-  TODO: 3. Call function `nameValidationError` inside our `validateForm`
-  function and pass `name` as an argument.
-  TODO: 4. console.log the `nameValidationError(name)` so we can check 
-  if it works.
+  
+  TODO: 3. Call function `nameValidationError` inside our `validateForm` function 
+  and pass `name` as an argument.
+  
+  TODO: 4. console.log the `nameValidationError(name)` so we can check if it 
+  works.
 
   So, what happened now - when we click submit button we get the value
   of the name field (if there is any) and after we call function
@@ -181,8 +183,9 @@ To validate our form we will need to follow next steps:
   the default behaviour of the submit button.
   
   
-4. Events. Submit button.
+4.Events. Submit button.
 =========================
+
 
   The standard behaviour of the form on submit - all input will be send
   to server and page will be reloaded - it was reasonable long time ago
@@ -192,8 +195,10 @@ To validate our form we will need to follow next steps:
 
   TODO: 1. At `index.html` page add `event` as an argument of the
   `validateForm` function.
+  
   TODO: 2. In your javascript file add `event` as an argument to
   the `validateForm` function.
+  
   TODO: 3. Inside of the `validateForm` function call:
   `event.preventDefault();`
 
@@ -202,36 +207,44 @@ To validate our form we will need to follow next steps:
   you all errors.
   
 
-5. Success or errors
+5.Success or errors
 ============================
-  
+
+
   Let's create an error handler, that will be handling our errors
-  and if
+  and if we have errors it will return us errors, else Success.
   
-  TODO: 1. Create function `handleErrors` that takes 1 argument `errors`
+  TODO: 1. Create function `handleErrors` that takes 1 argument `errors`.
+  
   TODO: 2. Make inside of this function check - if we have no errors 
   then console.log 'Success', else - console.log errors.
+  
   TODO: 3. Replace console.log `nameValidationError(name)` in function 
   `validateForm` with calling on function `handleErrors` and we need to 
   pass in the list of errors, to do so we need:
+  
   TODO: 4. Create variable `errors` inside function `validateForm` and 
   make it equal to `nameValidationError(name)`.
+  
   TODO: 5. Pass variable `errors` to `handleErrors` function.
   
   Run the form again and if name field is filled in correctly it should
   print us 'Success', else one of the first errors we get.
 
 
-6. Do validation for other fields
+6.Do validation for other fields
 =================================
+
 
   Now, when you know all steps on how to validate 1 field do same for 
   other fields.
   
   TODO: 1. Get value from field city and validate that it is not empty.
+  
   TODO: 2. Get value from field description and validate that it is not 
   empty, has more then 2 characters, less then 250 characters and consist 
   only from letters and numbers.
+  
   TODO: 3. Now in `validateForm` how to get errors from city and description 
   field. For that we will have to change our variable `error`. It should be 
   an object now. First of all, for `nameValidationError(name)` - turn it 
@@ -250,6 +263,7 @@ To validate our form we will need to follow next steps:
   through each key-value pair.
   
   TODO: 5. Create variable `errorsCount` inside of `handleErrors` function.
+  
   TODO: 6. Now let's do check if we have any errors for name field and change
   our `errorsCount` if we have any errors like so:
   
@@ -263,6 +277,7 @@ To validate our form we will need to follow next steps:
   If we do not have any errors and our name field validation returns empty 
   string, for `if` statement it will be `false` and we will not do any errors 
   counts. If we do have an error we will get in and count our errors.
+  
   TODO: 7. Inside of our function `handleErrors` we do not need if/else check 
   now to display Success or Errors. We can do `if` checking is our 
   `errorsCount < 1` console `Success`. As our error will be consoled by check 
@@ -275,8 +290,9 @@ To validate our form we will need to follow next steps:
   Now three of your fields should be validating in a proper way.
   
   
-7. Object, forEach, callback
+7.Object, forEach, callback
 =============================
+
 
   As you can see now we have a lot of repetitions in `handleErrors`. Now, 
   when all code works, it is time to do some cleaning and refactor the code.
@@ -294,6 +310,7 @@ To validate our form we will need to follow next steps:
     });
   ```
   
+  Read about the Objects on the bottom of the page in NOTES.
   Replace all our `if` checks for errors inside of the `handleError` function 
   with that code.
   
@@ -301,21 +318,25 @@ To validate our form we will need to follow next steps:
   repetitions in our code anymore.
 
 
-8. A bit of errors interactivity
+8.A bit of errors interactivity
 ================================
+
 
   Let's add some interactivity to our user interface, because at the moment 
   only we know about the errors that we can see in console.
   
   Let's make fields that has errors red. For that we have class `.error`
   that we create for you in our `index.css` file. It only makes the border of the
-  field that has this class red. 
+  field that has this class red.
+   
   TODO: 1.We will need to use `querySelector` to target the element on the page. 
   And all of it we can do inside our forEach loop. So we are targeting the whole 
   form and then fields with specific name (that our key will represent 
   `[name="${key}"]`).
+  
   TODO: 2.After we get our element on this element we need to add class `.error`.
-  For that purpose we will use `.classList.add('error')`
+  For that purpose we will use `.classList.add('error')`.
+  
   TODO: 3. Now you ll see that we get red fields every time, it is because every 
   time we iterate through field it will add class `error`. to avoid it we need
   to make a check if we do have any errors then get element from the page and
@@ -326,7 +347,8 @@ To validate our form we will need to follow next steps:
   
   It is also not cool that even if you put the wrong input in your field you still 
   need to delete it by yourself and type in something else. So let's clean the 
-  field with en error. 
+  field with en error.
+
   TODO: Right after we add class, get same element from the page and set it value 
   to empty string.
   
@@ -335,38 +357,47 @@ To validate our form we will need to follow next steps:
   
   
   And last step for errors - let's display them out to user.
+  
   TODO: Let's add our errors inside of the `errorsBlock` container that we have on
-  `index.html` page for you. If you check on it you will see that we have seperate
+  `index.html` page for you. If you check on it you will see that we have separate
   paragraphs for each error with the class same as our key. So you can target out 
   `errorsBlock` and class with key value. You can add errors to them using 
   `innerHTML` method.
   
-  When you submit form you will get your errors out for the fields you made mistake in.
+  When you submit form you will get your errors out for the fields you made 
+  mistake in.
   Feel free to polish css in any way you like.
   
   TODO: we can remove `console.log(errors[key]);` from `handleErrors` function now,
   as we have our errors displayed on the screen now.
+  
   PS: it is always good to clean up all `console.log` from your code if you
   have any when you finish.
 
 
-9. A bit of on Success interactivity
+9.A bit of on Success interactivity
 ====================================
+
+
   Time came to play around with what will happen on success. 
   We created for you a block with class name `on-success`.
+  
   TODO: 1.Create a variable `onSuccessWindow` in your `handleErrors` function
   and make it equal to element from the page with class `on-success`.
+  
   TODO: 2.When we have no errors and printing out `Success`, remove class 
   `hiddenWindow` from `onSuccessWindow` using `classList` method. As we added
-   classes before to errors fields.
+  classes before to errors fields.
 
    
   Now you will see a pop up window if all fields are filled in correct. 
   If you go to `index.html` page and look into `on-success` element you will
   see that we have 2 buttons there with `onClick` event handlers and they both
   have different functions. Let's create them so we can get on the next level!
+  
   TODO: 1.Create function `hideOnSuccessWindow` which will get our `on-success`
   element out of the page and add class `hiddenWindow` to it.
+  
   TODO: 2.Create function `redirectToWishlist` which will redirect us to 
   `wish-list.html` page. We can do it with help of `window.location.href`.
    
@@ -374,15 +405,125 @@ To validate our form we will need to follow next steps:
   Everything works good now, just 1 more tiny thing - did you notice that when 
   we choose to stay on this page and write another letter our form stays filled 
   in? We can easily fix it by resetting the form when we have no errors.
+  
   TODO: Get our form element from the page and use `reset` method on it.
+  
   TODO: last step - you can delete `console.log('Success');` now.
 
 
 
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-// Congratulations! You have finished Part 1!                         //
-// Stand up, stretch your legs, celebrate your achievement.           //
-// Next step will be following up the instructions in level2.md file. //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+  Congratulations! You have finished Part 1!
+  
+  Stand up, stretch your legs, celebrate your achievement.
+  
+  Next step will be following up the instructions in level2.md file.
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+NOTES
+=====
+
+
+  **Objects**
+
+  Objects can be compared to real world objects (like a car, a spoon, house, 
+  etc.. ) which have properties and a particular type. In Javascript (and 
+  other programming languages), an object is one of the complex data types, 
+  which have a list of keys and values
+  
+  ```
+    var car = {
+        Model : 'Honda City',
+        color: 'Red',
+        owner: 'X1',
+        yearOfManufacture: 2017
+    };
+  ```
+  
+  In the above example each item in the list is a property(e.g: Model, color, 
+  owner, year) of the object 'car'.
+  The object can also have functions called as methods.
+
+  The property-name/ Key can be a string or a number.
+
+  ```
+    var age = {
+        10: 'kids',
+        30: 'smart and wise',
+        100: 'very very experienced'
+    };
+  ```
+  
+  We use objects mostly to store data and for creating custom methods and 
+  functions.
+  There are 2 ways we can create objects
+   1. Object Literals
+   2. Object Constructors
+
+  Via Object Literals
+  We just declare an object name and within {} define all the properties 
+  with its values:
+  
+  ```
+    var myNewEmptyObject = {}
+
+    var book = {
+        name: 'Harry Potter Book1',
+        author: 'J.K. Rowling',
+        blurp: 'something magical... '
+    };
+
+    sayHello: function() {
+        console.log('Hello There');
+    };
+  ```
+
+  Via Object Constructors
+  Constructors are functions that are used for initialising new objects using 
+  the `new()` keyword.
+  Set the properties via the `object.propertyname` notation:
+  
+  ```
+    var book  = new Object();
+    book.name = 'Harry Potter Book1';
+    book.author = 'J.K.Rowling';
+  ```
+  
+  Accessing properties of an object:
+   - dot notation
+   - bracket notation
+   
+  ```
+    var book = {
+        name: 'Harry Potter Book1',
+        author: 'J.K. Rowling',
+        blurp: 'something magical... '
+    };
+  ```
+  
+  Dot notation is the most common way we access the objects. Most of the 
+  examples above use the dot notation.
+  It follows the object-name.key-name syntax:
+  
+  ```
+    console.log(book.name);
+    console.log(book.author);
+  ```
+  
+  Bracket notation follows the object-name[key-name] format:
+  
+  ```
+    console.log(book['name']);
+    console.log(book['author']);
+    console.log(age[10]);
+  ```
+  
+  Note: the property which is a number must use the bracket notation only.
+
+
+  You can delete the properties of an object using the `delete` keyword:
+  
+  `delete book.blurp`

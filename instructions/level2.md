@@ -156,6 +156,9 @@ Level 2 - Local storage
   TODO: 8. Increment the `localStorageIndex`(this will ensure that we have 
   unique keys for each object) in the end of our function 
   `saveDataToLocalStorage`.
+  
+  TODO: 9. Call the `saveDataToLocalStorage` function inside of the 
+  `handleErrors` function when we have no errors.
 
   TODO: 9. Give it a try - refresh your `index.html` and then add the 
   information - see if the entities have been added to the local storage.
@@ -200,17 +203,19 @@ Level 2 - Local storage
 
 
 
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-// Congratulations! You have finished Part 2!                         //
-// Stand up, stretch your legs, celebrate your achievement.           //
-// Next step will be following up the instructions in level3.md file. //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+  Congratulations! You have finished Part 2!
+  
+  Stand up, stretch your legs, celebrate your achievement.
+  
+  Next step will be following up the instructions in level3.md file.
+
+//////////////////////////////////////////////////////////////////////////////////
 
 
-  NOTES
-  ======
+NOTES
+======
 
 
   **Advantages of using local storage** 
@@ -225,105 +230,3 @@ Level 2 - Local storage
 
   Local storage is per origin (per domain and protocol). All pages, from one 
   origin, can store and access the same data.
-
-
-  **Objects**
-
-  Objects can be compared to real world objects (like a car, a spoon, house, 
-  etc.. ) which have properties and a particular type. In Javascript (and 
-  other programming languages), an object is one of the complex data types, 
-  which have a list of keys and values
-  
-  ```
-    var car = {
-        Model : 'Honda City',
-        color: 'Red',
-        owner: 'X1',
-        yearOfManufacture: 2017
-    };
-  ```
-  
-  In the above example each item in the list is a property(e.g: Model, color, 
-  owner, year) of the object 'car'.
-  The object can also have functions called as methods.
-
-  The property-name/ Key can be a string or a number.
-
-  ```
-    var age = {
-        10: 'kids',
-        30: 'smart and wise',
-        100: 'very very experienced'
-    };
-  ```
-  
-  We use objects mostly to store data and for creating custom methods and 
-  functions.
-  There are 2 ways we can create objects
-   1. Object Literals
-   2. Object Constructors
-
-  Via Object Literals
-  We just declare an object name and within {} define all the properties 
-  with its values:
-  
-  ```
-    var myNewEmptyObject = {}
-
-    var book = {
-        name: 'Harry Potter Book1',
-        author: 'J.K. Rowling',
-        blurp: 'something magical... '
-    };
-
-    sayHello: function() {
-        console.log('Hello There');
-    };
-  ```
-
-  Via Object Constructors
-  Constructors are functions that are used for initialising new objects using 
-  the `new()` keyword.
-  Set the properties via the `object.propertyname` notation:
-  
-  ```
-    var book  = new Object();
-    book.name = 'Harry Potter Book1';
-    book.author = 'J.K.Rowling';
-  ```
-  
-  Accessing properties of an object:
-   - dot notation
-   - bracket notation
-   
-  ```
-    var book = {
-        name: 'Harry Potter Book1',
-        author: 'J.K. Rowling',
-        blurp: 'something magical... '
-    };
-  ```
-  
-  Dot notation is the most common way we access the objects. Most of the 
-  examples above use the dot notation.
-  It follows the object-name.key-name syntax:
-  
-  ```
-    console.log(book.name);
-    console.log(book.author);
-  ```
-  
-  Bracket notation follows the object-name[key-name] format:
-  
-  ```
-    console.log(book['name']);
-    console.log(book['author']);
-    console.log(age[10]);
-  ```
-  
-  Note: the property which is a number must use the bracket notation only.
-
-
-  You can delete the properties of an object using the `delete` keyword:
-  
-  `delete book.blurp`

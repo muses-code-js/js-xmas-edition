@@ -58,7 +58,7 @@ function handleErrors(errors) {
   if (errorsCount < 1) {
     console.log('Success');
     onSuccessWindow.classList.remove('hiddenWindow');
-    //saveDataToLocalStorage();  //save data to localstorage
+    saveDataToLocalStorage();  //save data to localstorage
     document.querySelector('.letterToSantaForm').reset();
   }
 }
