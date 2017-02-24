@@ -13,10 +13,9 @@ Check on slides, click [here](http://slides.com/tanyabutenko/ngs-intro-14#/)
 To leave feedback click [here](https://goo.gl/forms/ZKqQvSUyUQH1kmRW2)
 
 
-___________________
 
-
-##How to use
+How to use
+============
 
 
 
@@ -39,10 +38,9 @@ code here as well and see result straight away, but as soon as you refresh the p
 gone, that is why we use Text Editor).
 
 
-________________________
 
-##Structure
-
+Structure
+============
 
 
 - Css folder contains css files that are responsible for styles and how our project looks 
@@ -61,6 +59,7 @@ ________________________
 - Js folder contains JavaScript files that makes our project works, it defines content and make 
   static page functional.
   Contains _main.js_ file where you write all your code.
+  _answers.js_ - file with whole working code.
 
 - _index.html_ - a file responsible for structure of our project.
 
