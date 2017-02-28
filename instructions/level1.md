@@ -244,6 +244,14 @@ To validate our form we will need to follow next steps:
   TODO: 2. Get value from field description and validate that it is not 
   empty, has more then 2 characters, less then 250 characters and consist 
   only from letters and numbers.
+
+  If you remember from before, you used the syntax
+
+  `var onlyLetters = /^[A-z]+$/.test(value);`
+
+  to indicate that you only want letters. In order to define only numbers,
+  you can add `0-9` inside the brackes, like `[A-z0-9]`. This allows any
+  letter, and any number. You might want to allow spaces as well!
   
   TODO: 3. Now in `validateForm` how to get errors from city and description 
   field. For that we will have to change our variable `error`. It should be 
@@ -252,11 +260,21 @@ To validate our form we will need to follow next steps:
   
   ```
   var errors = {
-    name: nameValidation(name)
+    name: nameValidationError(name)
   };
   ```
-  
+
   TODO: 4. Now do same for city and description.
+
+  When you are defining multiple keys for an object, you need to add a comma
+  to the previous value. For example:
+
+  ```
+  var errors = {
+    name: nameValidationError(name),
+    city: cityValidationError(city)
+  };
+  ```
    
   Now we are passing all of our errors into `handleErrors` function, but 
   now we need to check if we have any errors differently. As we need iterate 
@@ -329,10 +347,14 @@ To validate our form we will need to follow next steps:
   that we create for you in our `index.css` file. It only makes the border of the
   field that has this class red.
    
-  TODO: 1.We will need to use `querySelector` to target the element on the page. 
-  And all of it we can do inside our forEach loop. So we are targeting the whole 
-  form and then fields with specific name (that our key will represent 
-  `[name="${key}"]`).
+  TODO: 1.We will need to use `document.querySelector` to target the element on
+  the page. And all of it we can do inside our forEach loop. So we are targeting
+  the whole form and then fields with specific name (that our key will represent 
+  `[name="${key}"]`). This will look like:
+
+  ```
+  document.querySelector(`[name="${key}"]`)
+  ```
   
   TODO: 2.After we get our element on this element we need to add class `.error`.
   For that purpose we will use `.classList.add('error')`.
