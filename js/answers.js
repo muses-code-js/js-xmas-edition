@@ -69,7 +69,7 @@ function validateForm(e) {
   var city = document.letterToSanta.city.value;
   var description = document.letterToSanta.description.value;
 
-  const errors = {
+  var errors = {
     name: nameValidation(name),
     city: cityValidation(city),
     description: descriptionValidation(description)
