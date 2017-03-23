@@ -1,65 +1,18 @@
 .gift-section {
-	width: 40em;
-    height: 31em;
+  width: calc(100% - 10em);
+	max-width: 640px;
+  min-height: 500px;
 	padding: 3em;
-    margin: 0 auto;
+  margin: 0 auto;
 	background-color: #efefef;
-    text-align: center;
+  text-align: center;
 	z-index: 2;
 }
-
 .santa-gift {
-    width: inherit;
-    height: 400px;
+  width: 100%;
 }
-
-.santa {
-    position: absolute;
-    right: 3%;
-    bottom: 15%;
-}
-
-.santa img{
-    max-width: 350px;
-}
-
 .santa-gift-text {
 	color: red;
 	font-style: italic;
-}
-
-@media all and (max-width: 1000px){
-	.gift-section {
-		margin: 3em 4em;
-	}
-
-	.santa img{
-    	max-width: 300px;
-	}
-}
-
-
-@media all and (max-width: 800px){
-	.gift-section {
-		width: 27em;
-		height: 28em;
-		margin: 3em;
-	}
-
-	.santa img{
-    	max-width: 250px;
-	}
-}
-
-@media all and (max-width: 620px){
-	.gift-section {
-		width: 25em;
-		height: 28em;
-		margin: 2em;
-	}
-
-	.santa img{
-    	max-width: 200px;
-	}
 }
 

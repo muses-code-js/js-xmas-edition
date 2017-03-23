@@ -1,18 +1,9 @@
 .wish-list-container{
-	width: 40em;
-	height: 30em;
+  width: calc(100% - 10em);
+	max-width: 640px;
+  min-height: 500px;
 	padding: 3em;
 	margin: 0 auto;
 	background-color: #efefef;
 	z-index: 2;
-}
-
-.side-image-container {
-	position: absolute;
-	right: -14%;
-	top: 55%;
-}
-
-.side-image-container img {
-	max-width:60%;
 }
