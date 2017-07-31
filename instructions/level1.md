@@ -87,7 +87,7 @@ To validate our form we will need to follow next steps:
 
    So let's get one value out to see how it works, for that you need to check on
    index.html file as well - to see how we are getting element out knowing classes:
-   `var name = document.letterToSanta.myName.value;`
+   `var name = document.letterToSanta.name.value;`
 
    TODO: now it is your turn to get other values out. Create variables called
    `city`, `behavior`, `description` and store in them appropriate values from the form.
