@@ -297,13 +297,13 @@ These comprise all of the validations for our form.
 ===========================
 
 
-  As you can see now we have a lot of repetitions in `handleErrors`. Now, 
-  when all code works, it is time to do some cleaning and refactor the code.
-  You can read more about `forEach` method here:
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+  As you can see now we have a lot of repetitions in `handleErrors`. Since the 
+  code is all working, it is time to do some cleaning and refactoring of the code.
+  You can read more about `forEach` method [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
   
-  TODO: 1. We can iterate through errors through the key and with function 
-  forEach.
+  TODO:
+  1. We can iterate through errors by iterating through the through the keys with 
+  the forEach function:
   
   ```
   Object.keys(errors)
@@ -313,7 +313,7 @@ These comprise all of the validations for our form.
     });
   ```
   
-  Read about the Objects on the bottom of the page in NOTES.
+  Read about the Objects at the bottom of the page in NOTES.
   Replace all our `if` checks for errors inside of the `handleError` function 
   with that code.
   
@@ -326,96 +326,93 @@ These comprise all of the validations for our form.
 
 
   Let's add some interactivity to our user interface, because at the moment 
-  only we know about the errors that we can see in console.
+  only we know about the errors that we can see in the console.
   
-  Let's make fields that has errors red. For that we have class `.error`
-  that we create for you in our `index.css` file. It only makes the border of the
+  Let's make fields that have red errors. For that we have the `.error` class
+  that we've created for you in our `index.css` file. It makes the border of the
   field that has this class red.
    
-  TODO: 1.We will need to use `document.querySelector` to target the element on
-  the page. And all of it we can do inside our forEach loop. So we are targeting
-  the whole form and then fields with specific name (that our key will represent 
+  TODO:
+  1. We will need to use `document.querySelector` to target the element on
+  the page, which we can do inside our `forEach` loop. So we are targeting
+  the whole form and then fields with specific names (that our key will represent 
   `[name="${key}"]`). This will look like:
 
   ```
   document.querySelector(`[name="${key}"]`)
   ```
   
-  TODO: 2.After we get our element on this element we need to add class `.error`.
+  2. After we get our element on this element we need to add class `.error`.
   For that purpose we will use `.classList.add('error')`.
   
-  TODO: 3. Now you ll see that we get red fields every time, it is because every 
-  time we iterate through field it will add class `error`. to avoid it we need
-  to make a check if we do have any errors then get element from the page and
-  add the class.
-  
-  Now when we have an error your field that has it should turn red.
-  
+  3. Now you'll see that we get red fields every time, because every 
+  time we iterate through all of the fields it will add the class `error`. To avoid it we need
+  to check if have any errors, then get elements from the page and
+  add the class. Now when we have an error, the field that has it should turn red.
   
   It is also not cool that even if you put the wrong input in your field you still 
-  need to delete it by yourself and type in something else. So let's clean the 
-  field with en error.
+  need to delete it by yourself and type in something else. So let's automatically clear the 
+  field with an error.
 
-  TODO: Right after we add class, get same element from the page and set it value 
-  to empty string.
+  4. Right after we add the class, get the same element from the page and set its value 
+  to an empty string.
   
-  Now when we have an error your field that has it should turn red and empty. The
-  correct fields will still has it's values inside.
+  Now when we have an error, the field that has it should turn red and empty. The
+  correct fields will maintain its content.
   
+  As a final step for errors, let's display them to the user.
   
-  And last step for errors - let's display them out to user.
-  
-  TODO: Let's add our errors inside of the `errorsBlock` container that we have on
-  `index.html` page for you. If you check on it you will see that we have separate
-  paragraphs for each error with the class same as our key. So you can target out 
-  `errorsBlock` and class with key value. You can add errors to them using 
+  5. Let's add our errors inside of the `errorsBlock` container that we have in
+  `index.html` page. You will see that we have separate
+  paragraphs for each error with the same class as our key. So you can target the
+  `errorsBlock` and class with key value. You can add errors to them using the
   `innerHTML` method.
   
-  When you submit form you will get your errors out for the fields you made 
-  mistake in.
-  Feel free to polish css in any way you like.
+  When you submit the form, you will get errors for the fields that have mistakes in them.
+  Feel free to polish the CSS in any way you like.
   
-  TODO: we can remove `console.log(errors[key]);` from `handleErrors` function now,
-  as we have our errors displayed on the screen now.
+  6. We can remove `console.log(errors[key]);` from the `handleErrors` function now,
+  as we have our errors displayed on the screen.
   
-  PS: it is always good to clean up all `console.log` from your code if you
-  have any when you finish.
+  P.S.: It is always good to clean up all instances of `console.log` from your code 
+  when you finish.
 
 
 9.A bit of on Success interactivity
-====================================
+===================================
 
 
-  Time came to play around with what will happen on success. 
+  Time to play around with what will happen on a successful . 
   We created for you a block with class name `on-success`.
   
-  TODO: 1.Create a variable `onSuccessWindow` in your `handleErrors` function
-  and make it equal to element from the page with class `on-success`.
+  1. Create a variable `onSuccessWindow` in your `handleErrors` function
+  and make it equal to the element from the page with the class `on-success`.
   
-  TODO: 2.When we have no errors and printing out `Success`, remove class 
-  `hiddenWindow` from `onSuccessWindow` using `classList` method. As we added
+  2. When we have no errors and we're printing out `Success`, remove the class 
+  `hiddenWindow` from `onSuccessWindow` using the `classList` method. As we added
   classes before to errors fields.
 
    
-  Now you will see a pop up window if all fields are filled in correct. 
-  If you go to `index.html` page and look into `on-success` element you will
+  Now you will see a pop up window if all fields are filled in correctly. 
+  If you go to `index.html` and look at `on-success` element, you'll
   see that we have 2 buttons there with `onClick` event handlers and they both
   have different functions. Let's create them so we can get on the next level!
   
-  TODO: 1.Create function `hideOnSuccessWindow` which will get our `on-success`
-  element out of the page and add class `hiddenWindow` to it.
+  TODO:
+  1. Create the function `hideOnSuccessWindow` which will get our `on-success`
+  element off the page and add the class `hiddenWindow` to it.
   
-  TODO: 2.Create function `redirectToWishlist` which will redirect us to 
-  `wish-list.html` page. We can do it with help of `window.location.href`.
+  2. Create the function `redirectToWishlist` which will redirect us to 
+  `wish-list.html`. We can do it with help of `window.location.href`.
    
    
-  Everything works good now, just 1 more tiny thing - did you notice that when 
-  we choose to stay on this page and write another letter our form stays filled 
-  in? We can easily fix it by resetting the form when we have no errors.
+  Everything works well now, so there's just 1 more tiny thing. Did you notice that when 
+  we choose to stay on the page and write another letter, our form stays filled 
+  in? We can easily fix that by resetting the form when we have no errors.
   
-  TODO: Get our form element from the page and use `reset` method on it.
-  
-  TODO: last step - you can delete `console.log('Success');` now.
+  TODO:
+  1. Get our form element from the page and use the `reset` method on it.
+  2. Last step - you can delete `console.log('Success');` now.
 
 
 
@@ -425,7 +422,7 @@ These comprise all of the validations for our form.
   
   Stand up, stretch your legs, celebrate your achievement.
   
-  Next step will be following up the instructions in level2.md file.
+  The next step will be following the instructions in level2.md.
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -436,10 +433,10 @@ NOTES
 
   **Objects**
 
-  Objects can be compared to real world objects (like a car, a spoon, house, 
+  Objects can be compared to real world objects (like a car, a spoon, a house, 
   etc.. ) which have properties and a particular type. In Javascript (and 
   other programming languages), an object is one of the complex data types, 
-  which have a list of keys and values
+  which have a list of keys and values:
   
   ```
     var car = {
@@ -450,11 +447,10 @@ NOTES
     };
   ```
   
-  In the above example each item in the list is a property(e.g: Model, color, 
-  owner, year) of the object 'car'.
-  The object can also have functions called as methods.
+  In the above example each item in the list is a property (e.g: Model, color, 
+  owner, year) of the object 'car'. The object can also have functions called as methods.
 
-  The property-name/ Key can be a string or a number.
+  The property name/key can be a string or a number.
 
   ```
     var age = {
@@ -465,12 +461,12 @@ NOTES
   ```
   
   We use objects mostly to store data and for creating custom methods and 
-  functions.
-  There are 2 ways we can create objects
+  functions. There are 2 ways we can create objects:
    1. Object Literals
    2. Object Constructors
 
-  Via Object Literals
+  Via Object Literals:
+
   We just declare an object name and within {} define all the properties 
   with its values:
   
@@ -488,10 +484,10 @@ NOTES
     };
   ```
 
-  Via Object Constructors
+  Via Object Constructors:
+  
   Constructors are functions that are used for initialising new objects using 
-  the `new()` keyword.
-  Set the properties via the `object.propertyname` notation:
+  the `new()` keyword. We can set the properties via the `object.propertyname` notation:
   
   ```
     var book  = new Object();
@@ -500,8 +496,8 @@ NOTES
   ```
   
   Accessing properties of an object:
-   - dot notation
-   - bracket notation
+   - Dot notation
+   - Bracket notation
    
   ```
     var book = {
@@ -512,8 +508,7 @@ NOTES
   ```
   
   Dot notation is the most common way we access the objects. Most of the 
-  examples above use the dot notation.
-  It follows the object-name.key-name syntax:
+  examples above use the dot notation. It follows the object-name.key-name syntax:
   
   ```
     console.log(book.name);
