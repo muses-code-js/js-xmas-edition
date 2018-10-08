@@ -83,7 +83,7 @@ These comprise all of the validations for our form.
 
    So let's get one value out to see how it works, and for that you need to check on
    index.html file as well - to see how we are getting element out knowing classes:
-   `var name = document.letterToSanta.name.value;`
+   `const name = document.letterToSanta.name.value;`
 
    TODO: now it is your turn to get other values out. Create variables called
    `city`, `behavior`, `description` and store in them appropriate values from the form.
@@ -98,7 +98,7 @@ These comprise all of the validations for our form.
 
   ```
   function nameValidationError (value) {
-    if(value == '') {
+    if(value === '') {
       return 'Name cannot be empty';
     }
     return '';
@@ -136,7 +136,7 @@ These comprise all of the validations for our form.
   To validate that our name only has letters we can test our value as
   follows:
 
-  `var onlyLetters = /^[A-z]+$/.test(value);`
+  `const onlyLetters = /^[A-z]+$/.test(value);`
 
   This test will return a boolean value, so if `value` does match our
   pattern `onlyLetters` will be equal to `true`.
@@ -232,7 +232,7 @@ These comprise all of the validations for our form.
 
   If you remember from before, you used the syntax:
 
-  `var onlyLetters = /^[A-z]+$/.test(value);`
+  `const onlyLetters = /^[A-z]+$/.test(value);`
 
   to indicate that you only want letters. In order to define only numbers,
   you can add `0-9` inside the brackets, like `[A-z0-9]`. This allows any
@@ -244,7 +244,7 @@ These comprise all of the validations for our form.
   and a value `nameValidationError(name)`:
   
   ```
-  var errors = {
+  const errors = {
     name: nameValidationError(name)
   };
   ```
@@ -255,7 +255,7 @@ These comprise all of the validations for our form.
   to the previous value. For example:
 
   ```
-  var errors = {
+  const errors = {
     name: nameValidationError(name),
     city: cityValidationError(city)
   };
@@ -439,7 +439,7 @@ NOTES
   which have a list of keys and values:
   
   ```
-    var car = {
+    const car = {
         Model : 'Honda City',
         color: 'Red',
         owner: 'X1',
@@ -453,7 +453,7 @@ NOTES
   The property name/key can be a string or a number.
 
   ```
-    var age = {
+    const age = {
         10: 'kids',
         30: 'smart and wise',
         100: 'very very experienced'
@@ -471,9 +471,9 @@ NOTES
   with its values:
   
   ```
-    var myNewEmptyObject = {}
+    const myNewEmptyObject = {}
 
-    var book = {
+    const book = {
         name: 'Harry Potter Book1',
         author: 'J.K. Rowling',
         blurp: 'something magical... '
@@ -490,7 +490,7 @@ NOTES
   the `new()` keyword. We can set the properties via the `object.propertyname` notation:
   
   ```
-    var book  = new Object();
+    const book  = new Object();
     book.name = 'Harry Potter Book1';
     book.author = 'J.K.Rowling';
   ```
@@ -500,7 +500,7 @@ NOTES
    - Bracket notation
    
   ```
-    var book = {
+    const book = {
         name: 'Harry Potter Book1',
         author: 'J.K. Rowling',
         blurp: 'something magical... '

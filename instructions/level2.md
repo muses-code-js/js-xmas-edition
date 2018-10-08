@@ -71,7 +71,7 @@ Level 2 - Local storage
   Adding contents to local storage:
     `localStorage.setItem(‘key’, value);`
 
-  e.g: `var todos = $('#todos').html();`
+  e.g: `const todos = $('#todos').html();`
     `localStorage.setItem('todos', todos);`
 
   Retrieve information from local storage via the key:
@@ -104,7 +104,7 @@ Level 2 - Local storage
     api_key: 'abc123xyz789'
   }));
 
-  var user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user'));
   ```
 
 

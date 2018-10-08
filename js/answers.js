@@ -1,7 +1,7 @@
 /////////////////////////////////  validation /////////////////////////
 
 function nameValidation(value) {
-  if (value == '') {
+  if (value === '') {
     return 'Name field cannot be empty';
   }
   if (value.length < 2) {
@@ -17,7 +17,7 @@ function nameValidation(value) {
 }
 
 function descriptionValidation(value) {
-  if (value == '') {
+  if (value === '') {
     return 'Description field cannot be empty';
   }
   if (value.length < 2) {
@@ -33,7 +33,7 @@ function descriptionValidation(value) {
 }
 
 function cityValidation(value) {
-  if (value == '') {
+  if (value === '') {
     return 'City field cannot be empty';
   }
   return '';
@@ -41,8 +41,8 @@ function cityValidation(value) {
 
 
 function handleErrors(errors) {
-  var errorsCount = 0;
-  var onSuccessWindow = document.querySelector('.on-success');
+  let errorsCount = 0;
+  const onSuccessWindow = document.querySelector('.on-success');
 
   Object.keys(errors)
     .forEach(function (key) {
@@ -65,11 +65,11 @@ function handleErrors(errors) {
 
 function validateForm(e) {
   e.preventDefault();
-  var name = document.letterToSanta.name.value;
-  var city = document.letterToSanta.city.value;
-  var description = document.letterToSanta.description.value;
+  const name = document.letterToSanta.name.value;
+  const city = document.letterToSanta.city.value;
+  const description = document.letterToSanta.description.value;
 
-  var errors = {
+  const errors = {
     name: nameValidation(name),
     city: cityValidation(city),
     description: descriptionValidation(description)
@@ -82,7 +82,7 @@ function validateForm(e) {
 
 
 function hideOnSuccessWindow() {
-  var onSuccessWindow = document.getElementsByClassName('on-success');
+  const onSuccessWindow = document.getElementsByClassName('on-success');
   onSuccessWindow[0].classList.add('hiddenWindow');
 }
 
@@ -92,13 +92,13 @@ function redirectToWishlist() {
 
 
 //////////////////////////////  local storage   //////////////////////////////////////
-var localStorageIndex = localStorage.length + 1;
+let localStorageIndex = localStorage.length + 1;
 
 function saveDataToLocalStorage() {
   // get the data that you want to save
-  var name = document.letterToSanta.name.value;
-  var description = document.letterToSanta.description.value;
-  var key = 'user'+ localStorageIndex; // setting a unique key for the data
+  const name = document.letterToSanta.name.value;
+  const description = document.letterToSanta.description.value;
+  const key = 'user'+ localStorageIndex; // setting a unique key for the data
 
   // saving the data as an object
   localStorage.setItem(key, JSON.stringify({
@@ -110,13 +110,13 @@ function saveDataToLocalStorage() {
 }
 
 function displayWishes() {
-  var ul = document.querySelector('.wish-list');
-  var li, userKey;
+  const ul = document.querySelector('.wish-list');
+  let li, userKey;
 
-  for(var i = 1; i <= localStorage.length; i = i + 1) {
+  for(let i = 1; i <= localStorage.length; i = i + 1) {
     li = document.createElement('li');
     userKey = 'user' + i;
-    var data = JSON.parse(localStorage.getItem(userKey));
+    const data = JSON.parse(localStorage.getItem(userKey));
 
     li.appendChild(document.createTextNode(data.giftDescription));
     ul.appendChild(li);
@@ -125,43 +125,41 @@ function displayWishes() {
 
 ///////////////////////////////////  Random number generation  /////////////////////////
 
-var behaviorList = {
+const behaviorList = {
   1: 'Very Good',
   2: 'Good',
   3: 'Naughty'
 };
 
-var imageUrlList = {
+const imageUrlList = {
   1: 'img/gifts/goldGift.jpg',
   2: 'img/gifts/groupGift.jpeg',
   3: 'img/gifts/redGift.jpg'
 };
 
 function getRandomNumber(limit) {
-  var randomNumber = Math.floor(Math.random() * limit) + 1;
-  return randomNumber;
+  return Math.floor(Math.random() * limit) + 1;
 }
 
 function getBehaviour() {
-  var randomNo = getRandomNumber(3);
-  var behaviour = behaviorList[randomNo];
-  var element = document.querySelector('.attitude');
+  const randomNo = getRandomNumber(3);
+  const behaviour = behaviorList[randomNo];
+  const element = document.querySelector('.attitude');
   element.appendChild(document.createTextNode(behaviour));
 }
 
 function getGift() {
-  var randomNo = getRandomNumber(localStorageIndex - 1);
-  var userKey = 'user' + randomNo;
-  var data = JSON.parse(localStorage.getItem(userKey));
-  var element = document.querySelector('.santa-gift-text');
+  const randomNo = getRandomNumber(localStorageIndex - 1);
+  const userKey = 'user' + randomNo;
+  const data = JSON.parse(localStorage.getItem(userKey));
+  const element = document.querySelector('.santa-gift-text');
   element.appendChild(document.createTextNode(data.giftDescription));
 }
 
 function getGiftImage() {
-  var element = document.querySelector('.santa-gift');
-  var randomNo = getRandomNumber(3);
-  var giftImageUrl = imageUrlList[randomNo];
-  element.src = giftImageUrl;
+  const element = document.querySelector('.santa-gift');
+  const randomNo = getRandomNumber(3);
+  element.src = imageUrlList[randomNo];
 }
 
 function fillContent() {

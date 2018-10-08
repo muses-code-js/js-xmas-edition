@@ -62,7 +62,7 @@ Math.random
   as numbers:
   
   ```
-    var BehaviourList = {
+    const BehaviourList = {
        1: 'Very Good',
        2: 'Good',
        3: 'Naughty'
@@ -118,7 +118,7 @@ Math.random
   key as numbers and the value as the imageUrl with names:
   
   ```
-     var imageUrlList = {
+     const imageUrlList = {
         1: 'img/gifts/goldGift.jpg',
         2: 'img/gifts/groupGift.jpeg',
         3: 'img/gifts/redGift.jpg'
@@ -137,9 +137,9 @@ Math.random
    
   ```
      function getGiftImage() {
-        var element = document.querySelector('.santa-gift');
-        var randomNo = getRandomNumber(3);
-        var giftImageUrl = imageUrlList[randomNo];
+        const element = document.querySelector('.santa-gift');
+        const randomNo = getRandomNumber(3);
+        const giftImageUrl = imageUrlList[randomNo];
         element.src = giftImageUrl;
      };
   ```
