@@ -23,8 +23,8 @@ If you familiar with git you can fork this repository to your machine and start 
 through files starting from README.md file, after that jump to instructions/level1.md file.
 
 
-If you don't know what is git you can download the folder on your machine - go to
-'releases' tab over the yellow line on the page and download folder 'Source code (zip)'.
+If you don't know what is git you can download the folder on your machine - on the top right corner hit
+'Clone or Download' green button and 'Download ZIP'.
 Unzip it and start from README.md file, after jump to instructions/level1.md file.
 
 
@@ -78,3 +78,17 @@ Structure
 - _cheat-sheet.md_ - file with quick overlook for key namings and their explanations.
 
 - _LICENSE_ - our MIT license file.
+
+
+
+Authors
+=======
+
+- Tanya Butenko
+    github: [https://github.com/ButenkoT](https://github.com/ButenkoT)
+    twitter: [@ButenkoMe](https://twitter.com/ButenkoMe)
+
+- Reena Rajani
+    github: [https://github.com/ReenaRajani](https://github.com/ReenaRajani)
+    twitter: [@ReenaRajani](https://twitter.com/ReenaRajani)
+
